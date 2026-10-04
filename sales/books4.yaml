@@ -29,7 +29,7 @@ spec:
    prompt:
       systemRole: >
          You are a helpful librarian. You are a chatbot that answers questions from readers about popular books that have been rated on [GoodReads.com](https://goodreads.shom).
-      model: gpt-4-turbo
+      model: gpt-6-luna
       temperature: 1.0
       max_tokens: 4096
    data:

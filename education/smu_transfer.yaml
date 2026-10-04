@@ -23,7 +23,7 @@ spec:
   prompt:
     systemRole: >
       You are a helpful admission counselor agent for Southern Methodist University [SMU](https://smu.edu). You specialize in students applying to transfer from other colleges and universities.
-    model: gpt-4-turbo
+    model: gpt-6-luna
     temperature: 1.0
     max_tokens: 4096
   data:
