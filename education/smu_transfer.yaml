@@ -1,0 +1,46 @@
+---
+apiVersion: smarter.sh/v1
+kind: Plugin
+metadata:
+  name: smu_transfer_application
+  pluginClass: static
+  description: Information for prospective students about applying to SMU in Dallas as a transfer student
+  version: 0.1.0
+  tags:
+    - SMU
+    - College Transfer
+    - Dallas
+    - College Application
+spec:
+  selector:
+    directive: search_terms
+    # Complete search terms that will trigger the chatbot to use your customized system prompt.
+    searchTerms:
+      - SMU Transfer
+      - University Transfer
+      - College Application
+      - Dallas University
+  prompt:
+    systemRole: >
+      You are a helpful admission counselor agent for Southern Methodist University [SMU](https://smu.edu). You specialize in students applying to transfer from other colleges and universities.
+    model: gpt-6-luna
+    temperature: 1.0
+    max_tokens: 4096
+  data:
+    description: Get information about how to apply to SMU in Dallas as a transfer student. Information includes the steps in the application process and information about how to check on the status of your pending allocation
+    # ---------------------------------------------------------------------------
+    # Information provided to the OpenAI "Function Calling" algorithm to help it generate custom responses.
+    # ---------------------------------------------------------------------------
+    staticData:
+      contact:
+        - mailing_address: SMU Office of Undergraduate Admission, PO Box 750181, Dallas TX 75275
+        - physical_address_for_deliveries_ups_fedx_dhl: Laura Lee Blanton Building, 6185 Airline Road, Dallas TX 75205
+        - phone: 214-768-2058
+        - fax: 214-768-1083
+        - email: ugadmission@smu.edu
+        - admissions_office_hours: 8:30 a.m.-5:00 p.m. Central Time
+      application_steps:
+        Step 1 - Decide which application method is right for you. [SMU Application](https://admission.smu.edu/apply/) [The Common Application](https://www.commonapp.org/) [ApplyTexas](https://goapplytexas.org/) [Apply Coalition with SCOIR](https://app.scoir.com/app/signup/1100928) [Transfer Update Form](https://admission.smu.edu/register/transferupdate). Use the Transfer Update Form if you are a student who previously applied to SMU within the last two years but did not enroll or withdrew before the 12th day of classes.
+        Step 2 - Review and complete the application checklist - Complete your application on time [application deadlines](https://www.smu.edu/Admission/Apply/Transfer/TRN-DatesandDeadlines). Pay $60 nonrefundable application fee. (If you are Pell Eligible or a veteran, you can request an application fee waiver. Contact your [Transfer Application Counselor](https://www.smu.edu/Admission/ConnectWithUs/Counselors/Transfer). Submit official college transcripts from all previously attended colleges or universities, including dual credit and international coursework. Applicants who have completed international coursework must also submit a [professional evaluation](https://www.smu.edu/EnrollmentServices/transfer/ProspectiveStudents/InternationalTransferStudents/Foreign-University-Transcripts) that shows the U.S. equivalence for each educational credential and the credit and grade equivalents for university-level courses. When selecting the type of evaluation, choose a Course-by-Course evaluation. Submit an official high school transcript that includes a&nbsp;graduation date or GED. (Optional) Submit official SAT or ACT scores (only if you transfer with less than 24 credit hours). SMU won't require standardized test scores for 2023 undergraduate applicants. We want to ease your mind about applying to SMU. (Optional) Submit extracurricular resume, personal essay, and letters of recommendation as part of your application or [email](mailto:ugadmission@smu.edu). (optional but encouraged for scholarship consideration). [Review the International Transfer Application Process](https://www.smu.edu/Admission/Apply/Transfer/InternationalTransfer) for students transferring from international schools. [Review the audition and portfolio requirements](https://www.smu.edu/Meadows/Admissions/Undergraduate/AuditionsPortfolios) for students applying for Dance, Music, Theatre, Art, or Film.
+        Step 3 - Submit your application materials. Please submit your application online. Supporting documents such as your essay, recommendation letters, or resume can be sent via email to [ugadmission@smu.edu](mailto:ugadmission@smu.edu). We recommend that transcripts be sent electronically to SMU. If your school does not send electronic transcripts, they can be mailed to our contact address. Please be sure that you indicate your first, middle, and last name as well as your date of birth when you email or mail application materials. If you physically mail your documents, we recommend keeping a copy of all application forms for your records.  We look forward to reviewing your application and getting to know you better. If you have questions, don't hesitate to contact the SMU Office of Undergraduate Admission, where any of our [transfer admission counselors](https://www.smu.edu/Admission/ConnectWithUs/Counselors/Transfer) are ready to help.
+        Step 4 - Track Your Status. Track the completion of your application in your personalized [Status Page](https://admission.smu.edu/account/login?r=https://admission.smu.edu/apply/status). You will receive an email with your login information within 48-72 hours after you submit your application. You may pay online through the SMU Online Application, the Common Application, the Coalition for College Application, or the Apply Texas Application. If you are going to pay by check, make the check payable to SMU and mail to our mailing address.

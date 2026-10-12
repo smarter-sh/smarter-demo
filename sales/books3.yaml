@@ -1,0 +1,3006 @@
+---
+apiVersion: smarter.sh/v1
+kind: Plugin
+metadata:
+  name: goodreads_popular_books3
+  pluginClass: static
+  description: Part 3 of a list of about 1,300 popular books on GoodReads from a contributed dataset on Kaggle [Popular Books Dataset](https://www.kaggle.com/datasets/tanmay43sharma/goodreads-popular-books-dataset). Information in the dataaset includes ISBN, ISBN13, author name, title, language, count of raters who gave 1,2,3,4, and 5 stars.  Also includes the URL to a book cover image.
+  version: 0.1.0
+  tags:
+    - GoodReads Rating
+    - Book ISBN13
+    - Book Title
+    - Book Author
+    - Book Publication Year
+    - Book Ratings Count
+    - Book Average Rating
+spec:
+   selector:
+      directive: search_terms
+      # Complete search terms that will trigger the chatbot to use your customized system prompt.
+      searchTerms:
+         - Popular Books
+         - Popular Book Author
+         - Popular Book Title
+         - GoodReads Popular Books
+         - GoodReads Average Rating
+         - GoodReads Rating Count
+         - Book Cover Image
+   prompt:
+      systemRole: >
+         You are a helpful librarian. You are a chatbot that answers questions from readers about popular books that have been rated on [GoodReads.com](https://goodreads.shom).
+      model: gpt-6-luna
+      temperature: 1.0
+      max_tokens: 4096
+   data:
+      description: Get information about books popular with the members of goodreads.com. Includes the ISBN/ISBN13, the title, the author name, the publication yaer, the average rating, the count of ratings, and the number of members who rated the book 1,2,3,4,or 5 stars. Includes a URL for a book cover image, and the URL for a small version of the book cover image.
+      staticData:
+         books:
+            -
+               isbn13: 9780486455590.0
+               authors: Louisa May Alcott
+               original_publication_year: 1874.0
+               title: "Eight Cousins (Eight Cousins, #1)"
+               average_rating: 4.02
+               ratings_count: 27612
+               image_url: https://images.gr-assets.com/books/1328864060m/14570.jpg
+            -
+               isbn13: 9781416949670.0
+               authors: Susan Cooper
+               original_publication_year: 1975.0
+               title: "The Grey King (The Dark Is Rising, #4)"
+               average_rating: 4.18
+               ratings_count: 28027
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061921260.0
+               authors: Claire LaZebnik
+               original_publication_year: 2011.0
+               title: Epic Fail
+               average_rating: 3.73
+               ratings_count: 29207
+               image_url: https://images.gr-assets.com/books/1293626043m/9266776.jpg
+            -
+               isbn13: 9781416914170.0
+               authors: D.J. MacHale
+               original_publication_year: 2007.0
+               title: "The Pilgrims of Rayne (Pendragon, #8)"
+               average_rating: 4.14
+               ratings_count: 21540
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780399250580.0
+               authors: Anthony Horowitz
+               original_publication_year: 2011.0
+               title: Scorpia Rising (Alex Rider #9)
+               average_rating: 4.29
+               ratings_count: 23268
+               image_url: https://images.gr-assets.com/books/1417405144m/8435445.jpg
+            -
+               isbn13: 9780061232920.0
+               authors: Meg Cabot
+               original_publication_year: 2008.0
+               title: "Forever Princess (The Princess Diaries, #10)"
+               average_rating: 4.08
+               ratings_count: 28127
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780399250570.0
+               authors: Anthony Horowitz
+               original_publication_year: 2009.0
+               title: "Crocodile Tears (Alex Rider, #8)"
+               average_rating: 4.18
+               ratings_count: 23068
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780553269220.0
+               authors: L.M. Montgomery
+               original_publication_year: 1921.0
+               title: "Rilla of Ingleside (Anne of Green Gables, #8)"
+               average_rating: 4.16
+               ratings_count: 29277
+               image_url: https://images.gr-assets.com/books/1285712722m/433533.jpg
+            -
+               isbn13: 9780312650090.0
+               authors: Ann Aguirre
+               original_publication_year: 2012.0
+               title: "Outpost (Razorland, #2)"
+               average_rating: 4.12
+               ratings_count: 25650
+               image_url: https://images.gr-assets.com/books/1343084394m/10193062.jpg
+            -
+               isbn13: 9780316190080.0
+               authors: Gail Carriger
+               original_publication_year: 2013.0
+               title: "Etiquette & Espionage (Finishing School, #1)"
+               average_rating: 3.79
+               ratings_count: 29821
+               image_url: https://images.gr-assets.com/books/1331952557m/10874177.jpg
+            -
+               isbn13: 9780590554080.0
+               authors: Tamora Pierce
+               original_publication_year: 1997.0
+               title: "Sandry's Book (Circle of Magic, #1)"
+               average_rating: 3.99
+               ratings_count: 30169
+               image_url: https://images.gr-assets.com/books/1328860148m/58889.jpg
+            -
+               isbn13: 9780439791460.0
+               authors: Suzanne Collins
+               original_publication_year: 2006.0
+               title: "Gregor and the Marks of Secret (Underland Chronicles, #4)"
+               average_rating: 4.21
+               ratings_count: 23727
+               image_url: https://images.gr-assets.com/books/1397854344m/319644.jpg
+            -
+               isbn13: 9780449818440.0
+               authors: Brandon Sanderson
+               original_publication_year: 2013.0
+               title: "Mitosis (The Reckoners, #1.5)"
+               average_rating: 3.87
+               ratings_count: 17250
+               image_url: https://images.gr-assets.com/books/1385570447m/18966322.jpg
+            -
+               isbn13: 9780547251270.0
+               authors: Linda Sue Park
+               original_publication_year: 2010.0
+               title: "A Long Walk to Water: Based on a True Story"
+               average_rating: 4.23
+               ratings_count: 21593
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061449180.0
+               authors: Michael  Grant
+               original_publication_year: 2013.0
+               title: "Light (Gone, #6)"
+               average_rating: 4.4
+               ratings_count: 23730
+               image_url: https://images.gr-assets.com/books/1331533067m/8811139.jpg
+            -
+               isbn13: 9781250011920.0
+               authors: C.C. Hunter
+               original_publication_year: 2012.0
+               title: "Whispers at Moonrise (Shadow Falls, #4)"
+               average_rating: 4.38
+               ratings_count: 28430
+               image_url: https://images.gr-assets.com/books/1331497103m/13416236.jpg
+            -
+               isbn13: 9780307931900.0
+               authors: David Levithan
+               original_publication_year: 2013.0
+               title: Two Boys Kissing
+               average_rating: 4.11
+               ratings_count: 24587
+               image_url: https://images.gr-assets.com/books/1364194940m/17237214.jpg
+            -
+               isbn13: 9780375814690.0
+               authors: Tamora Pierce
+               original_publication_year: 2009.0
+               title: "Bloodhound (Beka Cooper, #2)"
+               average_rating: 4.26
+               ratings_count: 29414
+               image_url: https://images.gr-assets.com/books/1320443071m/153779.jpg
+            -
+               isbn13: 9780747594150.0
+               authors: Angie Sage
+               original_publication_year: 2009.0
+               title: "Syren (Septimus Heap, #5)"
+               average_rating: 4.1
+               ratings_count: 25245
+               image_url: https://images.gr-assets.com/books/1327949203m/4935682.jpg
+            -
+               isbn13: 9780060177250.0
+               authors: Clive Barker
+               original_publication_year: 1992.0
+               title: The Thief of Always
+               average_rating: 4.18
+               ratings_count: 19799
+               image_url: https://images.gr-assets.com/books/1309239541m/32638.jpg
+            -
+               isbn13: 9780330398050.0
+               authors: Judy Blume
+               original_publication_year: 1974.0
+               title: Blubber
+               average_rating: 3.78
+               ratings_count: 25402
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780545040520.0
+               authors: Meg Cabot
+               original_publication_year: 2008.0
+               title: "Airhead (Airhead, #1)"
+               average_rating: 3.77
+               ratings_count: 32457
+               image_url: https://images.gr-assets.com/books/1260574610m/2213324.jpg
+            -
+               isbn13: 9780152063850.0
+               authors: Beth Fantaskey
+               original_publication_year: 2000.0
+               title: "Jessica's Guide to Dating on the Dark Side (Jessica, #1)"
+               average_rating: 3.85
+               ratings_count: 32763
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781595143230.0
+               authors: Richelle Mead
+               original_publication_year: 2015.0
+               title: "The Ruby Circle (Bloodlines, #6)"
+               average_rating: 4.22
+               ratings_count: 29260
+               image_url: https://images.gr-assets.com/books/1409815340m/8709528.jpg
+            -
+               isbn13: 9780142407580.0
+               authors: Mike Lupica
+               original_publication_year: 2006.0
+               title: Heat
+               average_rating: 3.97
+               ratings_count: 16579
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781423119500.0
+               authors: "Rick Riordan, Tk"
+               original_publication_year: 2009.0
+               title: "Percy Jackson and the Olympians Boxed Set (Percy Jackson and the Olympians, #1-5)"
+               average_rating: 4.57
+               ratings_count: 19555
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316000960.0
+               authors: Darren Shan
+               original_publication_year: 2001.0
+               title: "Trials of Death (Cirque Du Freak, #5)"
+               average_rating: 4.25
+               ratings_count: 22157
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061433020.0
+               authors: Terry Pratchett
+               original_publication_year: 2008.0
+               title: Nation
+               average_rating: 4.05
+               ratings_count: 22466
+               image_url: https://images.gr-assets.com/books/1426659151m/2855034.jpg
+            -
+               isbn13: 9780399252650.0
+               authors: Kathryn Erskine
+               original_publication_year: 2010.0
+               title: Mockingbird
+               average_rating: 4.18
+               ratings_count: 21138
+               image_url: https://images.gr-assets.com/books/1301271068m/6596547.jpg
+            -
+               isbn13: 9780808553040.0
+               authors: Zilpha Keatley Snyder
+               original_publication_year: 1967.0
+               title: "The Egypt Game (Game, #1)"
+               average_rating: 3.81
+               ratings_count: 26657
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780399256930.0
+               authors: Ruta Sepetys
+               original_publication_year: 2013.0
+               title: Out of the Easy
+               average_rating: 4.05
+               ratings_count: 25913
+               image_url: https://images.gr-assets.com/books/1339784547m/11178225.jpg
+            -
+               isbn13: 9780140389660.0
+               authors: S.E. Hinton
+               original_publication_year: 1971.0
+               title: "That Was Then, This Is Now"
+               average_rating: 3.89
+               ratings_count: 22946
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780385521220.0
+               authors: Ann Brashares
+               original_publication_year: 2011.0
+               title: "Sisterhood Everlasting (Sisterhood, #5)"
+               average_rating: 3.9
+               ratings_count: 25849
+               image_url: https://images.gr-assets.com/books/1327878529m/9461872.jpg
+            -
+               isbn13: 9780152046910.0
+               authors: "Patricia C. Wrede, Peter de Sève"
+               original_publication_year: 1985.0
+               title: "Talking to Dragons (Enchanted Forest Chronicles, #4)"
+               average_rating: 4.19
+               ratings_count: 27948
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781408859640.0
+               authors: "Neil Gaiman, Chris Riddell"
+               original_publication_year: 2014.0
+               title: The Sleeper and the Spindle
+               average_rating: 3.9
+               ratings_count: 20889
+               image_url: https://images.gr-assets.com/books/1412343723m/23301545.jpg
+            -
+               isbn13: 9780689872370.0
+               authors: Neal Shusterman
+               original_publication_year: 2006.0
+               title: "Everlost (Skinjacker, #1)"
+               average_rating: 3.94
+               ratings_count: 24506
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780142428700.0
+               authors: "John Grisham, Richard Thomas"
+               original_publication_year: 2010.0
+               title: "Theodore Boone: Kid Lawyer (Theodore Boone, #1)"
+               average_rating: 3.72
+               ratings_count: 19284
+               image_url: https://images.gr-assets.com/books/1275094812m/7824997.jpg
+            -
+               isbn13: 9780142300700.0
+               authors: Richard Peck
+               original_publication_year: 2000.0
+               title: "A Year Down Yonder (A Long Way from Chicago, #2)"
+               average_rating: 4.1
+               ratings_count: 23310
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9788423648990.0
+               authors: Carlos Ruiz Zafón
+               original_publication_year: 1999.0
+               title: Marina
+               average_rating: 3.99
+               ratings_count: 18260
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781450595990.0
+               authors: Colleen Houck
+               original_publication_year: 2011.0
+               title: "Tiger's Voyage (The Tiger Saga, #3)"
+               average_rating: 4.35
+               ratings_count: 24495
+               image_url: https://images.gr-assets.com/books/1320459742m/7849341.jpg
+            -
+               isbn13: 9780064473620.0
+               authors: Louise Rennison
+               original_publication_year: 2001.0
+               title: "Knocked Out by My Nunga-Nungas (Confessions of Georgia Nicolson, #3)"
+               average_rating: 3.97
+               ratings_count: 24077
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780385733980.0
+               authors: Libba Bray
+               original_publication_year: 2009.0
+               title: Going Bovine
+               average_rating: 3.65
+               ratings_count: 26259
+               image_url: https://images.gr-assets.com/books/1320391025m/6512140.jpg
+            -
+               isbn13: 9780385736850.0
+               authors: Carrie Ryan
+               original_publication_year: 2010.0
+               title: "The Dead-Tossed Waves (The Forest of Hands and Teeth, #2)"
+               average_rating: 3.91
+               ratings_count: 26347
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780385907510.0
+               authors: Clare Vanderpool
+               original_publication_year: 2010.0
+               title: Moon Over Manifest
+               average_rating: 4.02
+               ratings_count: 23298
+               image_url: https://images.gr-assets.com/books/1320541883m/8293938.jpg
+            -
+               isbn13: 9781595144360.0
+               authors: "Jessica Anthony, Rodrigo Corral"
+               original_publication_year: 2012.0
+               title: Chopsticks
+               average_rating: 3.72
+               ratings_count: 18375
+               image_url: https://images.gr-assets.com/books/1364073067m/10710392.jpg
+            -
+               isbn13: 9780385741390.0
+               authors: James Dashner
+               original_publication_year: 2013.0
+               title: "The Eye of Minds (The Mortality Doctrine, #1)"
+               average_rating: 3.85
+               ratings_count: 22637
+               image_url: https://images.gr-assets.com/books/1358659346m/16279856.jpg
+            -
+               isbn13: 9780060535030.0
+               authors: "Isabel Allende, Margaret Sayers Peden"
+               original_publication_year: 2002.0
+               title: "City of the Beasts (Eagle and Jaguar, #1)"
+               average_rating: 3.69
+               ratings_count: 15497
+               image_url: https://images.gr-assets.com/books/1331488122m/3304.jpg
+            -
+               isbn13: 9780060751650.0
+               authors: Meg Cabot
+               original_publication_year: 2003.0
+               title: "Haunted (The Mediator, #5)"
+               average_rating: 4.15
+               ratings_count: 29460
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780689860060.0
+               authors: Anne McCaffrey
+               original_publication_year: 1979.0
+               title: "Dragondrums (Harper Hall, #3)"
+               average_rating: 4.04
+               ratings_count: 25473
+               image_url: https://images.gr-assets.com/books/1410942131m/28553.jpg
+            -
+               isbn13: 9780061767590.0
+               authors: Lauren Conrad
+               original_publication_year: 2009.0
+               title: "L.A. Candy (L.A. Candy, #1)"
+               average_rating: 3.36
+               ratings_count: 21910
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781440154230.0
+               authors: Kiera Cass
+               original_publication_year: 2009.0
+               title: The Siren
+               average_rating: 3.78
+               ratings_count: 21740
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781406331160.0
+               authors: Patrick Ness
+               original_publication_year: 2015.0
+               title: The Rest of Us Just Live Here
+               average_rating: 3.76
+               ratings_count: 23412
+               image_url: https://images.gr-assets.com/books/1429800081m/22910900.jpg
+            -
+               isbn13: 9780316254780.0
+               authors: Jennifer E. Smith
+               original_publication_year: 2014.0
+               title: The Geography of You and Me
+               average_rating: 3.68
+               ratings_count: 22368
+               image_url: https://images.gr-assets.com/books/1376408056m/18295852.jpg
+            -
+               isbn13: 9781409521970.0
+               authors: L.A. Weatherly
+               original_publication_year: 2010.0
+               title: "Angel (Angel, #1)"
+               average_rating: 3.89
+               ratings_count: 22262
+               image_url: https://images.gr-assets.com/books/1326626626m/7991200.jpg
+            -
+               isbn13: 9781416997950.0
+               authors: Brandon Mull
+               original_publication_year: 2012.0
+               title: "Seeds of Rebellion (Beyonders, #2)"
+               average_rating: 4.25
+               ratings_count: 20291
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781250091840.0
+               authors: Marissa Meyer
+               original_publication_year: 2016.0
+               title: "Stars Above (The Lunar Chronicles, #4.5)"
+               average_rating: 4.27
+               ratings_count: 29333
+               image_url: https://images.gr-assets.com/books/1472473049m/25689074.jpg
+            -
+               isbn13: 9780689869130.0
+               authors: D.J. MacHale
+               original_publication_year: 2005.0
+               title: "The Rivers of Zadaa (Pendragon, #6)"
+               average_rating: 4.19
+               ratings_count: 20264
+               image_url: https://images.gr-assets.com/books/1432151614m/215542.jpg
+            -
+               isbn13: 9780062002330.0
+               authors: Courtney Allison Moulton
+               original_publication_year: 2011.0
+               title: "Angelfire (Angelfire, #1)"
+               average_rating: 3.93
+               ratings_count: 27704
+               image_url: https://images.gr-assets.com/books/1294531919m/7285498.jpg
+            -
+               isbn13: 9780316000970.0
+               authors: Darren Shan
+               original_publication_year: 2002.0
+               title: "The Vampire Prince (Cirque Du Freak, #6)"
+               average_rating: 4.23
+               ratings_count: 20877
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781416983250.0
+               authors: Ellen Hopkins
+               original_publication_year: 2011.0
+               title: "Perfect (Impulse, #2)"
+               average_rating: 4.35
+               ratings_count: 21089
+               image_url: https://images.gr-assets.com/books/1296179689m/9917945.jpg
+            -
+               isbn13: 9781250059310.0
+               authors: "Stephanie Perkins, Holly Black, Ally Carter, Matt de la Pena, Gayle Forman, Jenny Han, David Levithan, Kelly Link, Myra McEntire, Rainbow Rowell, Laini Taylor, Kiersten White"
+               original_publication_year: 2014.0
+               title: "My True Love Gave to Me: Twelve Holiday Stories"
+               average_rating: 3.73
+               ratings_count: 22480
+               image_url: https://images.gr-assets.com/books/1459353572m/20309175.jpg
+            -
+               isbn13: 9781423121300.0
+               authors: Melissa de la Cruz
+               original_publication_year: 2011.0
+               title: "Lost in Time (Blue Bloods, #6)"
+               average_rating: 4.05
+               ratings_count: 23154
+               image_url: https://images.gr-assets.com/books/1298681924m/9578590.jpg
+            -
+               isbn13: 9780060725130.0
+               authors: Meg Cabot
+               original_publication_year: 2001.0
+               title: "Ninth Key (The Mediator, #2)"
+               average_rating: 4.07
+               ratings_count: 29922
+               image_url: https://images.gr-assets.com/books/1327954597m/199786.jpg
+            -
+               isbn13: 9780805088410.0
+               authors: Jacqueline Kelly
+               original_publication_year: 2009.0
+               title: "The Evolution of Calpurnia Tate (Calpurnia Tate, #1)"
+               average_rating: 3.97
+               ratings_count: 22291
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781423108760.0
+               authors: Katie Alender
+               original_publication_year: 2009.0
+               title: "Bad Girls Don't Die (Bad Girls Don't Die, #1)"
+               average_rating: 4.07
+               ratings_count: 18862
+               image_url: https://images.gr-assets.com/books/1344514129m/3678651.jpg
+            -
+               isbn13: 9781582349020.0
+               authors: Shannon Hale
+               original_publication_year: 2006.0
+               title: "River Secrets (The Books of Bayern, #3)"
+               average_rating: 4.03
+               ratings_count: 27399
+               image_url: https://images.gr-assets.com/books/1362875702m/248470.jpg
+            -
+               isbn13: 9780061668100.0
+               authors: Aprilynne Pike
+               original_publication_year: 2011.0
+               title: "Illusions (Wings, #3)"
+               average_rating: 4.12
+               ratings_count: 26291
+               image_url: https://images.gr-assets.com/books/1324797814m/6918909.jpg
+            -
+               isbn13: 9781250044660.0
+               authors: Marissa Meyer
+               original_publication_year: 2016.0
+               title: Heartless
+               average_rating: 4.06
+               ratings_count: 33348
+               image_url: https://images.gr-assets.com/books/1477740245m/18584855.jpg
+            -
+               isbn13: 9780060757360.0
+               authors: Paul Zindel
+               original_publication_year: 1968.0
+               title: "The Pigman (The Pigman, #1)"
+               average_rating: 3.58
+               ratings_count: 21278
+               image_url: https://images.gr-assets.com/books/1393796714m/128092.jpg
+            -
+               isbn13: 9780545284100.0
+               authors: Meg Cabot
+               original_publication_year: 2011.0
+               title: "Abandon (Abandon, #1)"
+               average_rating: 3.71
+               ratings_count: 30934
+               image_url: https://images.gr-assets.com/books/1324767084m/9397967.jpg
+            -
+               isbn13: 9780689877800.0
+               authors: Robert Muchamore
+               original_publication_year: 2004.0
+               title: "The Recruit (Cherub, #1)"
+               average_rating: 4.22
+               ratings_count: 19679
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780557364630.0
+               authors: Amanda Hocking
+               original_publication_year: 2010.0
+               title: "My Blood Approves (My Blood Approves, #1)"
+               average_rating: 3.83
+               ratings_count: 21707
+               image_url: https://images.gr-assets.com/books/1282351187m/8046350.jpg
+            -
+               isbn13: 9780738718680.0
+               authors: Simone Elkeles
+               original_publication_year: 2010.0
+               title: "Return to Paradise (Leaving Paradise, #2)"
+               average_rating: 4.05
+               ratings_count: 29043
+               image_url: https://images.gr-assets.com/books/1271357819m/7797874.jpg
+            -
+               isbn13: 
+               authors: Jasmine Warga
+               original_publication_year: 2015.0
+               title: My Heart and Other Black Holes
+               average_rating: 4.02
+               ratings_count: 22311
+               image_url: https://images.gr-assets.com/books/1415056175m/18336965.jpg
+            -
+               isbn13: 9780525478930.0
+               authors: Heather Brewer
+               original_publication_year: 2008.0
+               title: "Ninth Grade Slays (The Chronicles of Vladimir Tod, #2)"
+               average_rating: 4.14
+               ratings_count: 20198
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780547959210.0
+               authors: Joelle Charbonneau
+               original_publication_year: 2014.0
+               title: "Independent Study (The Testing, #2)"
+               average_rating: 3.97
+               ratings_count: 20593
+               image_url: https://images.gr-assets.com/books/1380034496m/17165932.jpg
+            -
+               isbn13: 9780375865860.0
+               authors: A.S. King
+               original_publication_year: 2010.0
+               title: Please Ignore Vera Dietz
+               average_rating: 3.91
+               ratings_count: 21728
+               image_url: https://images.gr-assets.com/books/1394240671m/6665671.jpg
+            -
+               isbn13: 9780060766210.0
+               authors: "Joseph Delaney, Patrick  Arrasmith"
+               original_publication_year: 2005.0
+               title: "Curse of the Bane (The Last Apprentice / Wardstone Chronicles, #2)"
+               average_rating: 4.1
+               ratings_count: 18513
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061020020.0
+               authors: L.J. Smith
+               original_publication_year: 1991.0
+               title: "The Struggle (The Vampire Diaries, #2)"
+               average_rating: 3.5
+               ratings_count: 23840
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780545284160.0
+               authors: Jennifer A. Nielsen
+               original_publication_year: 2013.0
+               title: "The Runaway King (The Ascendance Trilogy, #2)"
+               average_rating: 4.23
+               ratings_count: 24032
+               image_url: https://images.gr-assets.com/books/1351133357m/15703770.jpg
+            -
+               isbn13: 9780547248040.0
+               authors: Susan Beth Pfeffer
+               original_publication_year: 2010.0
+               title: "This World We Live In (Last Survivors, #3)"
+               average_rating: 3.81
+               ratings_count: 23711
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781846054760.0
+               authors: "James Patterson, Ned Rust"
+               original_publication_year: 2010.0
+               title: "The Gift (Witch & Wizard, #2)"
+               average_rating: 3.78
+               ratings_count: 17070
+               image_url: https://images.gr-assets.com/books/1273009084m/7646805.jpg
+            -
+               isbn13: 9781416963970.0
+               authors: Holly Black
+               original_publication_year: 2010.0
+               title: "White Cat (Curse Workers, #1)"
+               average_rating: 3.81
+               ratings_count: 29444
+               image_url: https://images.gr-assets.com/books/1358274572m/6087756.jpg
+            -
+               isbn13: 9780062224100.0
+               authors: Lauren Oliver
+               original_publication_year: 2015.0
+               title: Vanishing Girls
+               average_rating: 3.59
+               ratings_count: 19508
+               image_url: https://images.gr-assets.com/books/1414618400m/22465597.jpg
+            -
+               isbn13: 9780061242430.0
+               authors: "Angie Sage, Mark Zug"
+               original_publication_year: 2011.0
+               title: "Darke (Septimus Heap, #6)"
+               average_rating: 4.23
+               ratings_count: 21322
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780670011310.0
+               authors: Susane Colasanti
+               original_publication_year: 2009.0
+               title: Waiting For You
+               average_rating: 3.84
+               ratings_count: 20236
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060725140.0
+               authors: Meg Cabot
+               original_publication_year: 2001.0
+               title: "Reunion (The Mediator, #3)"
+               average_rating: 4.09
+               ratings_count: 28944
+               image_url: https://images.gr-assets.com/books/1327954705m/199785.jpg
+            -
+               isbn13: 9780060725140.0
+               authors: Meg Cabot
+               original_publication_year: 2001.0
+               title: "Darkest Hour (The Mediator, #4)"
+               average_rating: 4.16
+               ratings_count: 28104
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781416914200.0
+               authors: D.J. MacHale
+               original_publication_year: 2009.0
+               title: "The Soldiers of Halla (Pendragon, #10)"
+               average_rating: 4.27
+               ratings_count: 19502
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780385732080.0
+               authors: E. Lockhart
+               original_publication_year: 2005.0
+               title: "The Boyfriend List: 15 Guys, 11 Shrink Appointments, 4 Ceramic Frogs and Me, Ruby Oliver (Ruby Oliver, #1)"
+               average_rating: 3.49
+               ratings_count: 22687
+               image_url: https://images.gr-assets.com/books/1342343845m/301022.jpg
+            -
+               isbn13: 
+               authors: Veronica Roth
+               original_publication_year: 2014.0
+               title: "The Initiate (Divergent, #0.2)"
+               average_rating: 4.2
+               ratings_count: 15505
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060096120.0
+               authors: Meg Cabot
+               original_publication_year: 2003.0
+               title: "Princess in Pink (The Princess Diaries, #5)"
+               average_rating: 3.69
+               ratings_count: 27057
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061288850.0
+               authors: Ellen Schreiber
+               original_publication_year: 2008.0
+               title: "The Coffin Club (Vampire Kisses, #5)"
+               average_rating: 4.06
+               ratings_count: 22257
+               image_url: https://images.gr-assets.com/books/1306605099m/2051840.jpg
+            -
+               isbn13: 9780618683080.0
+               authors: Catherine Gilbert Murdock
+               original_publication_year: 2006.0
+               title: "Dairy Queen (Dairy Queen, #1)"
+               average_rating: 3.73
+               ratings_count: 23306
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316040100.0
+               authors: Malinda Lo
+               original_publication_year: 2009.0
+               title: Ash
+               average_rating: 3.62
+               ratings_count: 14513
+               image_url: https://images.gr-assets.com/books/1286563960m/6472451.jpg
+            -
+               isbn13: 9780609807910.0
+               authors: Megan McCafferty
+               original_publication_year: 2003.0
+               title: "Second Helpings (Jessica Darling, #2)"
+               average_rating: 4.08
+               ratings_count: 23180
+               image_url: https://images.gr-assets.com/books/1388707744m/199687.jpg
+            -
+               isbn13: 9780763620910.0
+               authors: Carolyn Mackler
+               original_publication_year: 2003.0
+               title: "The Earth, My Butt, and Other Big Round Things"
+               average_rating: 3.77
+               ratings_count: 21129
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780142400760.0
+               authors: Andrew Clements
+               original_publication_year: 2002.0
+               title: "Things Not Seen (Things, #1)"
+               average_rating: 3.88
+               ratings_count: 21478
+               image_url: https://images.gr-assets.com/books/1327910708m/542752.jpg
+            -
+               isbn13: 9780786851490.0
+               authors: Eoin Colfer
+               original_publication_year: 2004.0
+               title: The Supernaturalist
+               average_rating: 3.85
+               ratings_count: 23010
+               image_url: https://images.gr-assets.com/books/1233460677m/45432.jpg
+            -
+               isbn13: 9780786856920.0
+               authors: Gordon Korman
+               original_publication_year: 2000.0
+               title: Schooled
+               average_rating: 3.82
+               ratings_count: 20411
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780440227200.0
+               authors: Gary Paulsen
+               original_publication_year: 1996.0
+               title: "Brian's Winter (Brian's Saga, #3)"
+               average_rating: 3.98
+               ratings_count: 16861
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781406501070.0
+               authors: Louisa May Alcott
+               original_publication_year: 1886.0
+               title: "Jo's Boys and How They Turned Out: A Sequel to 'Little Men'"
+               average_rating: 3.8
+               ratings_count: 23877
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780689840340.0
+               authors: Susan Cooper
+               original_publication_year: 1974.0
+               title: "Greenwitch (The Dark Is Rising, #3)"
+               average_rating: 4.0
+               ratings_count: 21364
+               image_url: https://images.gr-assets.com/books/1347322295m/24963.jpg
+            -
+               isbn13: 9780671023460.0
+               authors: Elizabeth Chandler
+               original_publication_year: 1995.0
+               title: "Kissed by an Angel/The Power of Love/Soulmates (Kissed by an Angel, #1-3)"
+               average_rating: 4.08
+               ratings_count: 21813
+               image_url: https://images.gr-assets.com/books/1302945904m/321645.jpg
+            -
+               isbn13: 9780064407340.0
+               authors: Clive Barker
+               original_publication_year: 2002.0
+               title: "Abarat (Abarat, #1)"
+               average_rating: 4.08
+               ratings_count: 20460
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061284430.0
+               authors: Claudia Gray
+               original_publication_year: 2011.0
+               title: "Afterlife (Evernight, #4)"
+               average_rating: 3.8
+               ratings_count: 23780
+               image_url: https://images.gr-assets.com/books/1277385646m/6619499.jpg
+            -
+               isbn13: 9780399250480.0
+               authors: Nick Hornby
+               original_publication_year: 2007.0
+               title: Slam
+               average_rating: 3.27
+               ratings_count: 17393
+               image_url: https://images.gr-assets.com/books/1327963062m/411527.jpg
+            -
+               isbn13: 9780547628390.0
+               authors: Robin LaFevers
+               original_publication_year: 2013.0
+               title: "Dark Triumph (His Fair Assassin, #2)"
+               average_rating: 4.15
+               ratings_count: 28133
+               image_url: https://images.gr-assets.com/books/1346852168m/9943270.jpg
+            -
+               isbn13: 9780544289600.0
+               authors: Kwame Alexander
+               original_publication_year: 2014.0
+               title: The Crossover
+               average_rating: 4.22
+               ratings_count: 21249
+               image_url: https://images.gr-assets.com/books/1390427593m/18263725.jpg
+            -
+               isbn13: 9780373210460.0
+               authors: Aimee Carter
+               original_publication_year: 2012.0
+               title: "Goddess Interrupted (Goddess Test, #2)"
+               average_rating: 4.02
+               ratings_count: 26286
+               image_url: https://images.gr-assets.com/books/1397956745m/12637490.jpg
+            -
+               isbn13: 9780316000990.0
+               authors: Darren Shan
+               original_publication_year: 2002.0
+               title: "Hunters of the Dusk (Cirque Du Freak, #7)"
+               average_rating: 4.17
+               ratings_count: 19326
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780064403690.0
+               authors: Katherine Paterson
+               original_publication_year: 1980.0
+               title: Jacob Have I Loved
+               average_rating: 3.64
+               ratings_count: 24920
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780689869110.0
+               authors: D.J. MacHale
+               original_publication_year: 2004.0
+               title: "Black Water (Pendragon, #5)"
+               average_rating: 4.16
+               ratings_count: 19634
+               image_url: https://images.gr-assets.com/books/1431981444m/147801.jpg
+            -
+               isbn13: 9780375821820.0
+               authors: Carl Hiaasen
+               original_publication_year: 2005.0
+               title: Flush
+               average_rating: 3.86
+               ratings_count: 20076
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781492622470.0
+               authors: Marieke Nijkamp
+               original_publication_year: 2016.0
+               title: This Is Where It Ends
+               average_rating: 3.63
+               ratings_count: 23764
+               image_url: https://images.gr-assets.com/books/1431358364m/24529123.jpg
+            -
+               isbn13: 9780385737430.0
+               authors: Rebecca Stead
+               original_publication_year: 2012.0
+               title: Liar & Spy
+               average_rating: 3.81
+               ratings_count: 18990
+               image_url: https://images.gr-assets.com/books/1336000458m/13262061.jpg
+            -
+               isbn13: 9780545040560.0
+               authors: Meg Cabot
+               original_publication_year: 2009.0
+               title: "Being Nikki (Airhead, #2)"
+               average_rating: 3.87
+               ratings_count: 25531
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780689839080.0
+               authors: Margaret Peterson Haddix
+               original_publication_year: 2001.0
+               title: "Among the Impostors (Shadow Children, #2)"
+               average_rating: 4.05
+               ratings_count: 21629
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781442413180.0
+               authors: Christopher Pike
+               original_publication_year: 2010.0
+               title: "Thirst No. 3: The Eternal Dawn (Thirst, #3)"
+               average_rating: 4.14
+               ratings_count: 17343
+               image_url: https://images.gr-assets.com/books/1327900455m/7775611.jpg
+            -
+               isbn13: 9780765329580.0
+               authors: Kristen Simmons
+               original_publication_year: 2012.0
+               title: "Article 5 (Article 5, #1)"
+               average_rating: 3.78
+               ratings_count: 23732
+               image_url: https://images.gr-assets.com/books/1306520962m/10677277.jpg
+            -
+               isbn13: 9780439755210.0
+               authors: Jordan Sonnenblick
+               original_publication_year: 2004.0
+               title: "Drums, Girls & Dangerous Pie (Drums, Girls & Dangerous Pie, #1)"
+               average_rating: 4.25
+               ratings_count: 18551
+               image_url: https://images.gr-assets.com/books/1377989934m/318404.jpg
+            -
+               isbn13: 9780316106540.0
+               authors: Darren Shan
+               original_publication_year: 2002.0
+               title: "Allies of the Night (Cirque du Freak, #8)"
+               average_rating: 4.19
+               ratings_count: 18649
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780553269220.0
+               authors: L.M. Montgomery
+               original_publication_year: 1919.0
+               title: "Rainbow Valley (Anne of Green Gables, #7)"
+               average_rating: 4.0
+               ratings_count: 27353
+               image_url: https://images.gr-assets.com/books/1403192556m/77395.jpg
+            -
+               isbn13: 9780385737630.0
+               authors: Jennifer Donnelly
+               original_publication_year: 2010.0
+               title: Revolution
+               average_rating: 4.02
+               ratings_count: 20607
+               image_url: https://images.gr-assets.com/books/1320530843m/7558747.jpg
+            -
+               isbn13: 9780439436560.0
+               authors: Garth Nix
+               original_publication_year: 2004.0
+               title: "Drowned Wednesday (The Keys to the Kingdom, #3)"
+               average_rating: 3.85
+               ratings_count: 21267
+               image_url: https://images.gr-assets.com/books/1304528425m/47619.jpg
+            -
+               isbn13: 9780316224180.0
+               authors: "James Patterson, Maxine Paetro"
+               original_publication_year: 2012.0
+               title: "Confessions of a Murder Suspect (Confessions, #1)"
+               average_rating: 3.89
+               ratings_count: 19223
+               image_url: https://images.gr-assets.com/books/1377041438m/13521399.jpg
+            -
+               isbn13: 9780440420060.0
+               authors: Jerry Spinelli
+               original_publication_year: 2003.0
+               title: Milkweed
+               average_rating: 4.0
+               ratings_count: 19461
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062235790.0
+               authors: Amy Ewing
+               original_publication_year: 2014.0
+               title: "The Jewel (The Lone City, #1)"
+               average_rating: 3.86
+               ratings_count: 21247
+               image_url: https://images.gr-assets.com/books/1392220609m/16068780.jpg
+            -
+               isbn13: 9780064473450.0
+               authors: Diana Wynne Jones
+               original_publication_year: 1990.0
+               title: "Castle in the Air (Howl's Moving Castle, #2)"
+               average_rating: 3.93
+               ratings_count: 22964
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780545298410.0
+               authors: Jude Watson
+               original_publication_year: 2011.0
+               title: "A King's Ransom (The 39 Clues: Cahills vs. Vespers, #2)"
+               average_rating: 4.14
+               ratings_count: 18168
+               image_url: https://images.gr-assets.com/books/1329085934m/10706120.jpg
+            -
+               isbn13: 9781416960590.0
+               authors: Elizabeth Scott
+               original_publication_year: 2008.0
+               title: Living Dead Girl
+               average_rating: 3.83
+               ratings_count: 22014
+               image_url: https://images.gr-assets.com/books/1314272108m/2954411.jpg
+            -
+               isbn13: 9780316213070.0
+               authors: Holly Black
+               original_publication_year: 2015.0
+               title: The Darkest Part of the Forest
+               average_rating: 3.91
+               ratings_count: 22992
+               image_url: https://images.gr-assets.com/books/1397755014m/20958632.jpg
+            -
+               isbn13: 9781416971770.0
+               authors: "Scott Westerfeld, Keith Thompson"
+               original_publication_year: 2011.0
+               title: "Goliath (Leviathan, #3)"
+               average_rating: 4.25
+               ratings_count: 23911
+               image_url: https://images.gr-assets.com/books/1299808712m/9918083.jpg
+            -
+               isbn13: 9781595143990.0
+               authors: Beth Revis
+               original_publication_year: 2013.0
+               title: "Shades of Earth (Across the Universe, #3)"
+               average_rating: 4.11
+               ratings_count: 24612
+               image_url: https://images.gr-assets.com/books/1346494567m/10345937.jpg
+            -
+               isbn13: 9781416509640.0
+               authors: Ursula K. Le Guin
+               original_publication_year: 1990.0
+               title: "Tehanu (Earthsea Cycle, #4)"
+               average_rating: 3.89
+               ratings_count: 19503
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062217070.0
+               authors: Amy Tintera
+               original_publication_year: 2013.0
+               title: "Reboot (Reboot, #1)"
+               average_rating: 3.92
+               ratings_count: 23300
+               image_url: https://images.gr-assets.com/books/1350931774m/13517455.jpg
+            -
+               isbn13: 9780062001030.0
+               authors: Heather Dixon
+               original_publication_year: 2011.0
+               title: Entwined
+               average_rating: 3.87
+               ratings_count: 28950
+               image_url: https://images.gr-assets.com/books/1279037245m/8428195.jpg
+            -
+               isbn13: 9780060734010.0
+               authors: Ben Mikaelsen
+               original_publication_year: 1997.0
+               title: "Touching Spirit Bear (Spirit Bear, #1)"
+               average_rating: 3.85
+               ratings_count: 17706
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062318330.0
+               authors: Kiera Cass
+               original_publication_year: 2014.0
+               title: "The Selection Stories: The Prince & The Guard (The Selection, #0.5, 2.5)"
+               average_rating: 4.03
+               ratings_count: 23695
+               image_url: https://images.gr-assets.com/books/1380214609m/18172471.jpg
+            -
+               isbn13: 9780060766240.0
+               authors: "Joseph Delaney, Patrick  Arrasmith"
+               original_publication_year: 2007.0
+               title: "Night of the Soul Stealer (The Last Apprentice / Wardstone Chronicles, #3)"
+               average_rating: 4.12
+               ratings_count: 18279
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781442406600.0
+               authors: Jennifer Echols
+               original_publication_year: 2010.0
+               title: "Endless Summer (The Boys Next Door, #1-2)"
+               average_rating: 4.02
+               ratings_count: 18438
+               image_url: https://images.gr-assets.com/books/1276962830m/7124475.jpg
+            -
+               isbn13: 9781442402000.0
+               authors: Kelly Creagh
+               original_publication_year: 2010.0
+               title: "Nevermore (Nevermore, #1)"
+               average_rating: 3.87
+               ratings_count: 24570
+               image_url: https://images.gr-assets.com/books/1294381693m/7129598.jpg
+            -
+               isbn13: 9780307738620.0
+               authors: "Jonathan Stroud, Simon  Jones"
+               original_publication_year: 2010.0
+               title: "The Ring of Solomon (Bartimaeus, #0.5)"
+               average_rating: 4.19
+               ratings_count: 18809
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780689868240.0
+               authors: Holly Black
+               original_publication_year: 2002.0
+               title: Valiant (Modern Faerie Tales #2)
+               average_rating: 3.92
+               ratings_count: 26108
+               image_url: https://images.gr-assets.com/books/1332713354m/266607.jpg
+            -
+               isbn13: 9780805099250.0
+               authors: Mary E. Pearson
+               original_publication_year: 2015.0
+               title: "The Heart of Betrayal (The Remnant Chronicles, #2)"
+               average_rating: 4.32
+               ratings_count: 24104
+               image_url: https://images.gr-assets.com/books/1414932049m/21569527.jpg
+            -
+               isbn13: 9780061132230.0
+               authors: Ellen Schreiber
+               original_publication_year: 2007.0
+               title: "Dance with a Vampire (Vampire Kisses, #4)"
+               average_rating: 4.01
+               ratings_count: 22119
+               image_url: https://images.gr-assets.com/books/1443971681m/263171.jpg
+            -
+               isbn13: 9780590554090.0
+               authors: Tamora Pierce
+               original_publication_year: 1998.0
+               title: "Tris's Book (Circle of Magic, #2)"
+               average_rating: 4.07
+               ratings_count: 24511
+               image_url: https://images.gr-assets.com/books/1328860149m/58890.jpg
+            -
+               isbn13: 9780060519540.0
+               authors: Scott Westerfeld
+               original_publication_year: 2004.0
+               title: "The Secret Hour (Midnighters, #1)"
+               average_rating: 3.8
+               ratings_count: 23933
+               image_url: https://images.gr-assets.com/books/1501166713m/24766.jpg
+            -
+               isbn13: 9781590387830.0
+               authors: Brandon Mull
+               original_publication_year: 2007.0
+               title: "The Candy Shop War (The Candy Shop War, #1)"
+               average_rating: 4.03
+               ratings_count: 19619
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780738713700.0
+               authors: Maggie Stiefvater
+               original_publication_year: 2008.0
+               title: "Lament: The Faerie Queen's Deception (Books of Faerie, #1)"
+               average_rating: 3.69
+               ratings_count: 26116
+               image_url: https://images.gr-assets.com/books/1265410418m/3112850.jpg
+            -
+               isbn13: 9780316044780.0
+               authors: "Carlos Ruiz Zafón, Lucia Graves"
+               original_publication_year: 1986.0
+               title: "The Prince of Mist (Niebla, #1)"
+               average_rating: 3.66
+               ratings_count: 14381
+               image_url: https://images.gr-assets.com/books/1261604683m/7128341.jpg
+            -
+               isbn13: 9780060885460.0
+               authors: "Laura Ingalls Wilder, Garth Williams"
+               original_publication_year: 1953.0
+               title: "The First Four Years  (Little House, #9)"
+               average_rating: 3.88
+               ratings_count: 24180
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780399171630.0
+               authors: Renee Ahdieh
+               original_publication_year: 2016.0
+               title: "The Rose & the Dagger (The Wrath & the Dawn, #2)"
+               average_rating: 4.2
+               ratings_count: 26503
+               image_url: https://images.gr-assets.com/books/1443797156m/23308084.jpg
+            -
+               isbn13: 9780439545280.0
+               authors: Jenny Nimmo
+               original_publication_year: 2005.0
+               title: "Charlie Bone and the Castle of Mirrors (The Children of the Red King, #4)"
+               average_rating: 3.89
+               ratings_count: 20101
+               image_url: https://images.gr-assets.com/books/1290344623m/106131.jpg
+            -
+               isbn13: 9780399256130.0
+               authors: Andrea Cremer
+               original_publication_year: 2012.0
+               title: Bloodrose (Nightshade #3; Nightshade World #6)
+               average_rating: 4.06
+               ratings_count: 23874
+               image_url: https://images.gr-assets.com/books/1351196369m/8130839.jpg
+            -
+               isbn13: 9780062026540.0
+               authors: Rae Carson
+               original_publication_year: 2013.0
+               title: "The Bitter Kingdom (Fire and Thorns, #3)"
+               average_rating: 4.23
+               ratings_count: 24420
+               image_url: https://images.gr-assets.com/books/1360281470m/11431896.jpg
+            -
+               isbn13: 9780060841830.0
+               authors: Megan Whalen Turner
+               original_publication_year: 2000.0
+               title: "The Queen of Attolia (The Queen's Thief, #2)"
+               average_rating: 4.23
+               ratings_count: 23813
+               image_url: https://images.gr-assets.com/books/1293505506m/40158.jpg
+            -
+               isbn13: 9780440421240.0
+               authors: Jeanne DuPrau
+               original_publication_year: 2006.0
+               title: "The Prophet of Yonwood (Book of Ember, #3)"
+               average_rating: 3.25
+               ratings_count: 22237
+               image_url: https://images.gr-assets.com/books/1320636285m/207034.jpg
+            -
+               isbn13: 9780062327180.0
+               authors: Julie   Murphy
+               original_publication_year: 2015.0
+               title: "Dumplin' (Dumplin', #1)"
+               average_rating: 3.87
+               ratings_count: 22176
+               image_url: https://images.gr-assets.com/books/1424189465m/18304322.jpg
+            -
+               isbn13: 9780316058250.0
+               authors: Wendy Mass
+               original_publication_year: 2005.0
+               title: A Mango-Shaped Space
+               average_rating: 4.22
+               ratings_count: 20661
+               image_url: https://images.gr-assets.com/books/1326056834m/171020.jpg
+            -
+               isbn13: 9780670012090.0
+               authors: Laurie Halse Anderson
+               original_publication_year: 2014.0
+               title: The Impossible Knife of Memory
+               average_rating: 3.93
+               ratings_count: 20992
+               image_url: https://images.gr-assets.com/books/1405786728m/18079527.jpg
+            -
+               isbn13: 9781423116190.0
+               authors: "Julie Anne Peters, C.J. Bott"
+               original_publication_year: 2009.0
+               title: "By the Time You Read This, I'll Be Dead"
+               average_rating: 3.89
+               ratings_count: 18722
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781416914240.0
+               authors: D.J. MacHale
+               original_publication_year: 2005.0
+               title: "The Quillan Games (Pendragon, #7)"
+               average_rating: 4.19
+               ratings_count: 18296
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060760880.0
+               authors: Rita Williams-Garcia
+               original_publication_year: 2010.0
+               title: "One Crazy Summer (Gaither Sisters, #1)"
+               average_rating: 3.95
+               ratings_count: 18913
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780439372950.0
+               authors: "Blue Balliett, Brett Helquist"
+               original_publication_year: 2004.0
+               title: "Chasing Vermeer (Chasing Vermeer, #1)"
+               average_rating: 3.71
+               ratings_count: 22167
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062351200.0
+               authors: Kiera Cass
+               original_publication_year: 2014.0
+               title: "The Queen (The Selection, #0.4)"
+               average_rating: 3.93
+               ratings_count: 22362
+               image_url: https://images.gr-assets.com/books/1399581012m/22054340.jpg
+            -
+               isbn13: 9780375870420.0
+               authors: Sarah Rees Brennan
+               original_publication_year: 2012.0
+               title: "Unspoken (The Lynburn Legacy, #1)"
+               average_rating: 3.85
+               ratings_count: 22927
+               image_url: https://images.gr-assets.com/books/1333397426m/10866624.jpg
+            -
+               isbn13: 9780061797060.0
+               authors: Kelley Armstrong
+               original_publication_year: 2012.0
+               title: "The Calling (Darkness Rising, #2)"
+               average_rating: 4.1
+               ratings_count: 25930
+               image_url: https://images.gr-assets.com/books/1478986621m/11765920.jpg
+            -
+               isbn13: 9781599903220.0
+               authors: Jessica Day George
+               original_publication_year: 2009.0
+               title: "Princess of the Midnight Ball (The Princesses of Westfalin Trilogy, #1)"
+               average_rating: 3.92
+               ratings_count: 26804
+               image_url: https://images.gr-assets.com/books/1312063284m/3697927.jpg
+            -
+               isbn13: 9781439178230.0
+               authors: Jennifer Echols
+               original_publication_year: 2010.0
+               title: Forget You
+               average_rating: 3.79
+               ratings_count: 24334
+               image_url: https://images.gr-assets.com/books/1311064362m/7129588.jpg
+            -
+               isbn13: 9780060835770.0
+               authors: Megan Whalen Turner
+               original_publication_year: 2006.0
+               title: "The King of Attolia (The Queen's Thief, #3)"
+               average_rating: 4.37
+               ratings_count: 22724
+               image_url: https://images.gr-assets.com/books/1293505327m/40159.jpg
+            -
+               isbn13: 9780786854450.0
+               authors: "Ridley Pearson, David Frankland"
+               original_publication_year: 2004.0
+               title: "Disney after Dark (Kingdom Keepers, #1)"
+               average_rating: 3.91
+               ratings_count: 18193
+               image_url: https://images.gr-assets.com/books/1275199267m/953260.jpg
+            -
+               isbn13: 9780671729460.0
+               authors: V.C. Andrews
+               original_publication_year: 1982.0
+               title: "My Sweet Audrina (Audrina, #1)"
+               average_rating: 3.92
+               ratings_count: 18549
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781742372620.0
+               authors: Craig Silvey
+               original_publication_year: 2009.0
+               title: Jasper Jones
+               average_rating: 4.06
+               ratings_count: 12680
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780525421560.0
+               authors: Nina LaCour
+               original_publication_year: 2009.0
+               title: Hold Still
+               average_rating: 3.99
+               ratings_count: 16238
+               image_url: https://images.gr-assets.com/books/1394240099m/6373717.jpg
+            -
+               isbn13: 9780857532020.0
+               authors: Jonathan Stroud
+               original_publication_year: 2013.0
+               title: "The Screaming Staircase (Lockwood & Co., #1)"
+               average_rating: 4.19
+               ratings_count: 15446
+               image_url: https://images.gr-assets.com/books/1369670906m/13555073.jpg
+            -
+               isbn13: 9781423166000.0
+               authors: Ally Carter
+               original_publication_year: 2013.0
+               title: "United We Spy (Gallagher Girls, #6)"
+               average_rating: 4.44
+               ratings_count: 22902
+               image_url: https://images.gr-assets.com/books/1368559827m/13580951.jpg
+            -
+               isbn13: 9780439680100.0
+               authors: Anthony Horowitz
+               original_publication_year: 2005.0
+               title: "Raven's Gate (The Gatekeepers, #1)"
+               average_rating: 3.9
+               ratings_count: 18247
+               image_url: https://images.gr-assets.com/books/1328842690m/107664.jpg
+            -
+               isbn13: 9781423134500.0
+               authors: Melissa de la Cruz
+               original_publication_year: 2010.0
+               title: "Bloody Valentine (Blue Bloods, #5.5)"
+               average_rating: 3.98
+               ratings_count: 19903
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060776250.0
+               authors: Ellen Schreiber
+               original_publication_year: 2006.0
+               title: "Vampireville (Vampire Kisses, #3)"
+               average_rating: 3.92
+               ratings_count: 21676
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060097480.0
+               authors: Louise Rennison
+               original_publication_year: 2002.0
+               title: "Dancing in My Nuddy-Pants (Confessions of Georgia Nicolson, #4)"
+               average_rating: 4.01
+               ratings_count: 18451
+               image_url: https://images.gr-assets.com/books/1327885836m/402015.jpg
+            -
+               isbn13: 9780316011270.0
+               authors: Julie Anne Peters
+               original_publication_year: 2004.0
+               title: Luna
+               average_rating: 3.86
+               ratings_count: 17859
+               image_url: https://images.gr-assets.com/books/1339269673m/316445.jpg
+            -
+               isbn13: 9780743437350.0
+               authors: D.J. MacHale
+               original_publication_year: 2003.0
+               title: "The Reality Bug (Pendragon, #4)"
+               average_rating: 4.15
+               ratings_count: 19049
+               image_url: https://images.gr-assets.com/books/1431402995m/215541.jpg
+            -
+               isbn13: 9780689839050.0
+               authors: Margaret Peterson Haddix
+               original_publication_year: 2002.0
+               title: "Among the Betrayed (Shadow Children, #3)"
+               average_rating: 4.06
+               ratings_count: 19964
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316016650.0
+               authors: Darren Shan
+               original_publication_year: 2002.0
+               title: "The Lake of Souls (Cirque Du Freak, #10)"
+               average_rating: 4.19
+               ratings_count: 16803
+               image_url: https://images.gr-assets.com/books/1255988654m/8951.jpg
+            -
+               isbn13: 9780671729450.0
+               authors: V.C. Andrews
+               original_publication_year: 1985.0
+               title: "Heaven (Casteel, #1)"
+               average_rating: 4.01
+               ratings_count: 17289
+               image_url: https://images.gr-assets.com/books/1321683934m/787660.jpg
+            -
+               isbn13: 9780439545300.0
+               authors: Jenny Nimmo
+               original_publication_year: 2006.0
+               title: "Charlie Bone and the Hidden King (The Children of the Red King, #5)"
+               average_rating: 3.98
+               ratings_count: 18899
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060096150.0
+               authors: Meg Cabot
+               original_publication_year: 2006.0
+               title: "Princess in Training (The Princess Diaries, #6)"
+               average_rating: 3.7
+               ratings_count: 23199
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780545140320.0
+               authors: Elizabeth Eulberg
+               original_publication_year: 2010.0
+               title: "The Lonely Hearts Club (The Lonely Hearts Club, #1)"
+               average_rating: 3.83
+               ratings_count: 18208
+               image_url: https://images.gr-assets.com/books/1479699351m/6609714.jpg
+            -
+               isbn13: 9780062240090.0
+               authors: Veronica Roth
+               original_publication_year: 2012.0
+               title: "The Divergent Series 2-Book Collection (Divergent, #1-2)"
+               average_rating: 4.56
+               ratings_count: 12490
+               image_url: https://images.gr-assets.com/books/1341816250m/15743078.jpg
+            -
+               isbn13: 9781442444930.0
+               authors: Andrew  Smith
+               original_publication_year: 2013.0
+               title: "Winger (Winger, #1)"
+               average_rating: 4.08
+               ratings_count: 18596
+               image_url: https://images.gr-assets.com/books/1367927656m/11861815.jpg
+            -
+               isbn13: 9780380732230.0
+               authors: Melvin Burgess
+               original_publication_year: 1996.0
+               title: Smack
+               average_rating: 3.87
+               ratings_count: 11971
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780807218980.0
+               authors: Jenny Nimmo
+               original_publication_year: 2003.0
+               title: "Charlie Bone and the Time Twister (The Children of the Red King, #2)"
+               average_rating: 3.88
+               ratings_count: 18374
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780439545270.0
+               authors: Jenny Nimmo
+               original_publication_year: 2004.0
+               title: "Charlie Bone and the Invisible Boy (The Children of the Red King, #3)"
+               average_rating: 3.89
+               ratings_count: 19080
+               image_url: https://images.gr-assets.com/books/1328867540m/106129.jpg
+            -
+               isbn13: 9780061288880.0
+               authors: Ellen Schreiber
+               original_publication_year: 2009.0
+               title: "Royal Blood (Vampire Kisses, #6)"
+               average_rating: 4.09
+               ratings_count: 20049
+               image_url: https://images.gr-assets.com/books/1318011052m/5111039.jpg
+            -
+               isbn13: 9781599900580.0
+               authors: Jessica Day George
+               original_publication_year: 2006.0
+               title: "Dragon Slippers (Dragon Slippers, #1)"
+               average_rating: 4.22
+               ratings_count: 20916
+               image_url: https://images.gr-assets.com/books/1316730294m/669570.jpg
+            -
+               isbn13: 9781416979180.0
+               authors: Lisa McMann
+               original_publication_year: 2010.0
+               title: "Gone (Wake, #3)"
+               average_rating: 3.72
+               ratings_count: 24393
+               image_url: https://images.gr-assets.com/books/1269866682m/7124095.jpg
+            -
+               isbn13: 9780312370150.0
+               authors: S.A. Bodeen
+               original_publication_year: 2008.0
+               title: "The Compound (The Compound, #1)"
+               average_rating: 3.87
+               ratings_count: 17687
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781442422020.0
+               authors: Kimberly Derting
+               original_publication_year: 2011.0
+               title: "The Pledge (The Pledge, #1)"
+               average_rating: 3.8
+               ratings_count: 25322
+               image_url: https://images.gr-assets.com/books/1327878861m/10637748.jpg
+            -
+               isbn13: 9780062071070.0
+               authors: Dan Wells
+               original_publication_year: 2013.0
+               title: "Fragments (Partials Sequence, #2)"
+               average_rating: 4.12
+               ratings_count: 19108
+               image_url: https://images.gr-assets.com/books/1352943797m/13170596.jpg
+            -
+               isbn13: 9780141325030.0
+               authors: Charlie Higson
+               original_publication_year: 2009.0
+               title: "The Enemy (The Enemy, #1)"
+               average_rating: 4.08
+               ratings_count: 12531
+               image_url: https://images.gr-assets.com/books/1340819657m/6605625.jpg
+            -
+               isbn13: 9780060531830.0
+               authors: Kenneth Oppel
+               original_publication_year: 2004.0
+               title: "Airborn (Matt Cruse, #1)"
+               average_rating: 4.16
+               ratings_count: 18717
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062024690.0
+               authors: "Colin Meloy, Carson Ellis"
+               original_publication_year: 2011.0
+               title: "Wildwood (Wildwood Chronicles, #1)"
+               average_rating: 3.63
+               ratings_count: 18770
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780142301520.0
+               authors: Sherwood Smith
+               original_publication_year: 1997.0
+               title: Crown Duel (Crown & Court #1-2)
+               average_rating: 4.19
+               ratings_count: 19546
+               image_url: https://images.gr-assets.com/books/1360507771m/21060.jpg
+            -
+               isbn13: 9781606841750.0
+               authors: Ilsa J. Bick
+               original_publication_year: 2011.0
+               title: "Ashes (Ashes Trilogy, #1)"
+               average_rating: 3.94
+               ratings_count: 19532
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060728270.0
+               authors: "Michelle Paver, Geoff Taylor"
+               original_publication_year: 2004.0
+               title: "Wolf Brother (Chronicles of Ancient Darkness, #1)"
+               average_rating: 4.15
+               ratings_count: 15673
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780525421350.0
+               authors: Heather Brewer
+               original_publication_year: 2009.0
+               title: "Tenth Grade Bleeds (The Chronicles of Vladimir Tod, #3)"
+               average_rating: 4.24
+               ratings_count: 17579
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780786837880.0
+               authors: "Dave Barry, Ridley Pearson, Greg Call"
+               original_publication_year: 2007.0
+               title: "Peter and the Secret of Rundoon (Peter and the Starcatchers, #3)"
+               average_rating: 4.16
+               ratings_count: 18570
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780590554110.0
+               authors: Tamora Pierce
+               original_publication_year: 1998.0
+               title: "Daja's Book (Circle of Magic, #3)"
+               average_rating: 4.06
+               ratings_count: 22695
+               image_url: https://images.gr-assets.com/books/1328860149m/58894.jpg
+            -
+               isbn13: 9780590554110.0
+               authors: Tamora Pierce
+               original_publication_year: 1999.0
+               title: "Briar's Book (Circle of Magic, #4)"
+               average_rating: 4.14
+               ratings_count: 23152
+               image_url: https://images.gr-assets.com/books/1481568171m/58893.jpg
+            -
+               isbn13: 9781416989400.0
+               authors: L.J. Smith
+               original_publication_year: 1997.0
+               title: "The Forbidden Game (The Forbidden Game, #1-3)"
+               average_rating: 4.19
+               ratings_count: 18443
+               image_url: https://images.gr-assets.com/books/1405784030m/7100490.jpg
+            -
+               isbn13: 9781416953560.0
+               authors: Elizabeth Scott
+               original_publication_year: 2008.0
+               title: Perfect You
+               average_rating: 3.7
+               ratings_count: 20858
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316735160.0
+               authors: Cecily von Ziegesar
+               original_publication_year: 2004.0
+               title: "You're the One That I Want (Gossip Girl, #6)"
+               average_rating: 3.71
+               ratings_count: 16643
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780763631630.0
+               authors: Alison Croggon
+               original_publication_year: 2002.0
+               title: "The Naming (The Books of Pellinor, #1)"
+               average_rating: 4.0
+               ratings_count: 19214
+               image_url: https://images.gr-assets.com/books/1378497748m/393146.jpg
+            -
+               isbn13: 9780316911480.0
+               authors: Cecily von Ziegesar
+               original_publication_year: 2002.0
+               title: "You Know You Love Me (Gossip Girl, #2)"
+               average_rating: 3.53
+               ratings_count: 18052
+               image_url: https://images.gr-assets.com/books/1388599269m/37451.jpg
+            -
+               isbn13: 9780375990690.0
+               authors: Lauren Kate
+               original_publication_year: 2013.0
+               title: "Teardrop (Teardrop, #1)"
+               average_rating: 3.65
+               ratings_count: 18998
+               image_url: https://images.gr-assets.com/books/1360596375m/16070143.jpg
+            -
+               isbn13: 9780448445860.0
+               authors: Carolyn Keene
+               original_publication_year: 
+               title: "Nancy Drew: #1-64"
+               average_rating: 4.19
+               ratings_count: 16743
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780758272810.0
+               authors: Brigid Kemmerer
+               original_publication_year: 2012.0
+               title: "Storm (Elemental, #1)"
+               average_rating: 3.96
+               ratings_count: 21281
+               image_url: https://images.gr-assets.com/books/1325995724m/10401084.jpg
+            -
+               isbn13: 9780061976800.0
+               authors: Maureen Johnson
+               original_publication_year: 2011.0
+               title: "The Last Little Blue Envelope (Little Blue Envelope, #2)"
+               average_rating: 3.86
+               ratings_count: 19275
+               image_url: https://images.gr-assets.com/books/1288297853m/9462775.jpg
+            -
+               isbn13: 9780439703700.0
+               authors: Garth Nix
+               original_publication_year: 2004.0
+               title: "Grim Tuesday (The Keys to the Kingdom, #2)"
+               average_rating: 3.86
+               ratings_count: 19133
+               image_url: https://images.gr-assets.com/books/1304528058m/47620.jpg
+            -
+               isbn13: 9780374351380.0
+               authors: Leila Sales
+               original_publication_year: 2013.0
+               title: This Song Will Save Your Life
+               average_rating: 3.95
+               ratings_count: 19947
+               image_url: https://images.gr-assets.com/books/1362753915m/15777621.jpg
+            -
+               isbn13: 9781442440750.0
+               authors: "Jenny Han, Siobhan Vivian"
+               original_publication_year: 2012.0
+               title: "Burn for Burn (Burn for Burn, #1)"
+               average_rating: 3.87
+               ratings_count: 18772
+               image_url: https://images.gr-assets.com/books/1332791803m/13406425.jpg
+            -
+               isbn13: 9780062284840.0
+               authors: Tahereh Mafi
+               original_publication_year: 2013.0
+               title: "Fracture Me (Shatter Me, #2.5)"
+               average_rating: 3.77
+               ratings_count: 24092
+               image_url: https://images.gr-assets.com/books/1383413233m/17331518.jpg
+            -
+               isbn13: 9781416991760.0
+               authors: Orson Scott Card
+               original_publication_year: 2010.0
+               title: "Pathfinder (Pathfinder, #1)"
+               average_rating: 3.98
+               ratings_count: 16979
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780553154340.0
+               authors: "Jim Kjelgaard, Carl Pfeuffer"
+               original_publication_year: 1945.0
+               title: "Big Red (Big Red, #1)"
+               average_rating: 4.11
+               ratings_count: 15923
+               image_url: https://images.gr-assets.com/books/1320551723m/123170.jpg
+            -
+               isbn13: 9780439498820.0
+               authors: Jaclyn Moriarty
+               original_publication_year: 2003.0
+               title: "The Year of Secret Assignments (Ashbury/Brookfield, #2)"
+               average_rating: 3.9
+               ratings_count: 16357
+               image_url: https://images.gr-assets.com/books/1388634474m/82780.jpg
+            -
+               isbn13: 9780553280520.0
+               authors: L.M. Montgomery
+               original_publication_year: 1926.0
+               title: The Blue Castle
+               average_rating: 4.23
+               ratings_count: 18190
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062117370.0
+               authors: Kasie West
+               original_publication_year: 2013.0
+               title: "Pivot Point (Pivot Point, #1)"
+               average_rating: 4.08
+               ratings_count: 20173
+               image_url: https://images.gr-assets.com/books/1356020486m/11988046.jpg
+            -
+               isbn13: 9781442474280.0
+               authors: Becca Fitzpatrick
+               original_publication_year: 2014.0
+               title: Black Ice
+               average_rating: 3.88
+               ratings_count: 17571
+               image_url: https://images.gr-assets.com/books/1414369023m/21943246.jpg
+            -
+               isbn13: 9780061670860.0
+               authors: L.J. Smith
+               original_publication_year: 2008.0
+               title: "The Initiation / The Captive Part I (The Secret Circle, #1-2)"
+               average_rating: 3.96
+               ratings_count: 19563
+               image_url: https://images.gr-assets.com/books/1341591862m/3099780.jpg
+            -
+               isbn13: 9780060891280.0
+               authors: "Joseph Delaney, Patrick  Arrasmith"
+               original_publication_year: 2007.0
+               title: "Attack of the Fiend (The Last Apprentice / Wardstone Chronicles, #4)"
+               average_rating: 4.19
+               ratings_count: 14814
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781596435700.0
+               authors: Caragh M. O'Brien
+               original_publication_year: 2011.0
+               title: "Prized (Birthmarked, #2)"
+               average_rating: 3.99
+               ratings_count: 19328
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060776240.0
+               authors: Ellen Schreiber
+               original_publication_year: 2005.0
+               title: "Kissing Coffins (Vampire Kisses, #2)"
+               average_rating: 3.87
+               ratings_count: 22124
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781442413340.0
+               authors: John Corey Whaley
+               original_publication_year: 2011.0
+               title: Where Things Come Back
+               average_rating: 3.81
+               ratings_count: 14852
+               image_url: https://images.gr-assets.com/books/1330581469m/8563789.jpg
+            -
+               isbn13: 9780399256200.0
+               authors: John Flanagan
+               original_publication_year: 2011.0
+               title: "The Outcasts (Brotherband Chronicles, #1)"
+               average_rating: 4.37
+               ratings_count: 16613
+               image_url: https://images.gr-assets.com/books/1327968303m/10551947.jpg
+            -
+               isbn13: 9780152050860.0
+               authors: L.A. Meyer
+               original_publication_year: 2002.0
+               title: "Bloody Jack (Bloody Jack, #1)"
+               average_rating: 4.11
+               ratings_count: 19147
+               image_url: https://images.gr-assets.com/books/1392868382m/295649.jpg
+            -
+               isbn13: 9780439405580.0
+               authors: Kathryn Lasky
+               original_publication_year: 2003.0
+               title: "The Capture (Guardians of Ga'Hoole, #1)"
+               average_rating: 3.88
+               ratings_count: 18830
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781471118100.0
+               authors: Neal Shusterman
+               original_publication_year: 2013.0
+               title: "UnSouled (Unwind, #3)"
+               average_rating: 4.23
+               ratings_count: 15526
+               image_url: https://images.gr-assets.com/books/1378899523m/12792658.jpg
+            -
+               isbn13: 9780316097770.0
+               authors: Megan Abbott
+               original_publication_year: 2012.0
+               title: Dare Me
+               average_rating: 3.23
+               ratings_count: 15618
+               image_url: https://images.gr-assets.com/books/1342214694m/12982393.jpg
+            -
+               isbn13: 9780451234870.0
+               authors: Rachel Caine
+               original_publication_year: 2011.0
+               title: "Last Breath (The Morganville Vampires, #11)"
+               average_rating: 4.32
+               ratings_count: 19963
+               image_url: https://images.gr-assets.com/books/1327900044m/10549501.jpg
+            -
+               isbn13: 9781582349240.0
+               authors: E.D. Baker
+               original_publication_year: 2002.0
+               title: "The Frog Princess (Tales of the Frog Princess, #1)"
+               average_rating: 3.81
+               ratings_count: 22176
+               image_url: https://images.gr-assets.com/books/1397766099m/65091.jpg
+            -
+               isbn13: 9780061689420.0
+               authors: Ellen Schreiber
+               original_publication_year: 2010.0
+               title: "Love Bites (Vampire Kisses, #7)"
+               average_rating: 4.13
+               ratings_count: 17707
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780439700890.0
+               authors: Garth Nix
+               original_publication_year: 2007.0
+               title: "Lady Friday (The Keys to the Kingdom, #5)"
+               average_rating: 3.91
+               ratings_count: 17675
+               image_url: https://images.gr-assets.com/books/1304528767m/17206.jpg
+            -
+               isbn13: 9780316002560.0
+               authors: Wendy Mass
+               original_publication_year: 2008.0
+               title: Every Soul a Star
+               average_rating: 4.1
+               ratings_count: 17282
+               image_url: https://images.gr-assets.com/books/1330221785m/3223761.jpg
+            -
+               isbn13: 9780765328660.0
+               authors: Kendare Blake
+               original_publication_year: 2012.0
+               title: "Girl of Nightmares (Anna, #2)"
+               average_rating: 3.9
+               ratings_count: 20708
+               image_url: https://images.gr-assets.com/books/1344463840m/12507214.jpg
+            -
+               isbn13: 9780316156290.0
+               authors: Darren Shan
+               original_publication_year: 2005.0
+               title: "Lord of the Shadows (Cirque Du Freak, #11)"
+               average_rating: 4.22
+               ratings_count: 15794
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780061059920.0
+               authors: L.J. Smith
+               original_publication_year: 1991.0
+               title: "The Fury (The Vampire Diaries, #3)"
+               average_rating: 3.55
+               ratings_count: 19911
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780399256510.0
+               authors: Harlan Coben
+               original_publication_year: 2011.0
+               title: "Shelter (Mickey Bolitar, #1)"
+               average_rating: 3.92
+               ratings_count: 9081
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062012040.0
+               authors: Josephine Angelini
+               original_publication_year: 2013.0
+               title: "Goddess (Starcrossed, #3)"
+               average_rating: 4.24
+               ratings_count: 20589
+               image_url: https://images.gr-assets.com/books/1351415040m/7849034.jpg
+            -
+               isbn13: 9780062026090.0
+               authors: Robison Wells
+               original_publication_year: 2011.0
+               title: "Variant (Variant, #1)"
+               average_rating: 3.92
+               ratings_count: 18473
+               image_url: https://images.gr-assets.com/books/1298564680m/10433900.jpg
+            -
+               isbn13: 9780670011830.0
+               authors: Amy Efaw
+               original_publication_year: 2009.0
+               title: After
+               average_rating: 3.73
+               ratings_count: 17238
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781455503060.0
+               authors: Julianna Baggott
+               original_publication_year: 2012.0
+               title: "Pure (Pure, #1)"
+               average_rating: 3.74
+               ratings_count: 18778
+               image_url: https://images.gr-assets.com/books/1302743156m/9680114.jpg
+            -
+               isbn13: 9780670011470.0
+               authors: Susane Colasanti
+               original_publication_year: 2010.0
+               title: Something Like Fate
+               average_rating: 3.72
+               ratings_count: 17347
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780152047380.0
+               authors: Diane Duane
+               original_publication_year: 1983.0
+               title: "So You Want to Be a Wizard (Young Wizards, #1)"
+               average_rating: 3.8
+               ratings_count: 20408
+               image_url: https://images.gr-assets.com/books/1328877065m/116563.jpg
+            -
+               isbn13: 9781423175120.0
+               authors: Jennifer L. Armentrout
+               original_publication_year: 2014.0
+               title: Don't Look Back
+               average_rating: 4.11
+               ratings_count: 11499
+               image_url: https://images.gr-assets.com/books/1380803444m/18296030.jpg
+            -
+               isbn13: 9780375866680.0
+               authors: Wendelin Van Draanen
+               original_publication_year: 2011.0
+               title: The Running Dream
+               average_rating: 4.3
+               ratings_count: 17061
+               image_url: https://images.gr-assets.com/books/1333577959m/8354134.jpg
+            -
+               isbn13: 9780061345720.0
+               authors: Anna Godbersen
+               original_publication_year: 2009.0
+               title: "Envy (Luxe, #3)"
+               average_rating: 3.91
+               ratings_count: 20432
+               image_url: https://images.gr-assets.com/books/1327928712m/3347892.jpg
+            -
+               isbn13: 9781250024630.0
+               authors: Ann Aguirre
+               original_publication_year: 2013.0
+               title: "Horde (Razorland, #3)"
+               average_rating: 4.28
+               ratings_count: 17422
+               image_url: https://images.gr-assets.com/books/1362287692m/10596724.jpg
+            -
+               isbn13: 9781595140840.0
+               authors: Scott Westerfeld
+               original_publication_year: 2005.0
+               title: "Peeps (Peeps, #1)"
+               average_rating: 3.77
+               ratings_count: 20702
+               image_url: https://images.gr-assets.com/books/1443904244m/186103.jpg
+            -
+               isbn13: 9780763630160.0
+               authors: Alison Croggon
+               original_publication_year: 2004.0
+               title: "The Riddle (The Books of Pellinor, #2)"
+               average_rating: 4.1
+               ratings_count: 16605
+               image_url: https://images.gr-assets.com/books/1360170670m/393145.jpg
+            -
+               isbn13: 9780385738590.0
+               authors: Carrie Ryan
+               original_publication_year: 2011.0
+               title: "The Dark and Hollow Places (The Forest of Hands and Teeth, #3)"
+               average_rating: 4.03
+               ratings_count: 19282
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062009490.0
+               authors: Terry Pratchett
+               original_publication_year: 2012.0
+               title: Dodger
+               average_rating: 3.9
+               ratings_count: 14775
+               image_url: https://images.gr-assets.com/books/1343828971m/13516846.jpg
+            -
+               isbn13: 9780440227500.0
+               authors: Gary Paulsen
+               original_publication_year: 1991.0
+               title: "The River (Brian's Saga, #2)"
+               average_rating: 3.77
+               ratings_count: 14198
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780375833650.0
+               authors: Juliet Marillier
+               original_publication_year: 2007.0
+               title: "Wildwood Dancing (Wildwood, #1)"
+               average_rating: 4.09
+               ratings_count: 21810
+               image_url: https://images.gr-assets.com/books/1393127105m/13929.jpg
+            -
+               isbn13: 9780152050850.0
+               authors: Jean Ferris
+               original_publication_year: 2002.0
+               title: "Once Upon a Marigold (Upon a Marigold, #1)"
+               average_rating: 3.98
+               ratings_count: 20394
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 
+               authors: Chanda Hahn
+               original_publication_year: 2012.0
+               title: "Fairest (An Unfortunate Fairy Tale, #2)"
+               average_rating: 4.12
+               ratings_count: 16315
+               image_url: https://images.gr-assets.com/books/1338578342m/14745338.jpg
+            -
+               isbn13: 9780785113800.0
+               authors: "Brian K. Vaughan, Adrian Alphona"
+               original_publication_year: 2006.0
+               title: "Runaways, Vol. 1: Pride and Joy (Runaways, #1)"
+               average_rating: 4.02
+               ratings_count: 18111
+               image_url: https://images.gr-assets.com/books/1264516899m/7389.jpg
+            -
+               isbn13: 9780439436570.0
+               authors: Garth Nix
+               original_publication_year: 2006.0
+               title: "Sir Thursday (The Keys to the Kingdom, #4)"
+               average_rating: 3.94
+               ratings_count: 17624
+               image_url: https://images.gr-assets.com/books/1304528609m/47618.jpg
+            -
+               isbn13: 9781416914180.0
+               authors: D.J. MacHale
+               original_publication_year: 2008.0
+               title: "Raven Rise (Pendragon, #9)"
+               average_rating: 4.2
+               ratings_count: 17691
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780340881540.0
+               authors: Robert Muchamore
+               original_publication_year: 2004.0
+               title: "Class A (Cherub, #2)"
+               average_rating: 4.26
+               ratings_count: 14299
+               image_url: https://images.gr-assets.com/books/1356698938m/1291211.jpg
+            -
+               isbn13: 9780316012330.0
+               authors: Darren Shan
+               original_publication_year: 2005.0
+               title: "Lord Loss (The Demonata, #1)"
+               average_rating: 4.21
+               ratings_count: 15325
+               image_url: https://images.gr-assets.com/books/1344267992m/164719.jpg
+            -
+               isbn13: 9780545040600.0
+               authors: Meg Cabot
+               original_publication_year: 2010.0
+               title: "Runaway (Airhead, #3)"
+               average_rating: 3.93
+               ratings_count: 20846
+               image_url: https://images.gr-assets.com/books/1328840338m/6460331.jpg
+            -
+               isbn13: 9780547959210.0
+               authors: Joelle Charbonneau
+               original_publication_year: 2014.0
+               title: "Graduation Day (The Testing, #3)"
+               average_rating: 3.81
+               ratings_count: 14963
+               image_url: https://images.gr-assets.com/books/1384363227m/18222699.jpg
+            -
+               isbn13: 9780689856400.0
+               authors: Cynthia Kadohata
+               original_publication_year: 2004.0
+               title: Kira-Kira
+               average_rating: 3.9
+               ratings_count: 18166
+               image_url: https://images.gr-assets.com/books/1437825008m/89731.jpg
+            -
+               isbn13: 
+               authors: Pittacus Lore
+               original_publication_year: 2015.0
+               title: "The Fate of Ten (Lorien Legacies, #6)"
+               average_rating: 4.32
+               ratings_count: 16819
+               image_url: https://images.gr-assets.com/books/1429799057m/24488476.jpg
+            -
+               isbn13: 9780060737560.0
+               authors: Michael Thomas Ford
+               original_publication_year: 2008.0
+               title: Suicide Notes
+               average_rating: 3.92
+               ratings_count: 14749
+               image_url: https://images.gr-assets.com/books/1424990334m/3097601.jpg
+            -
+               isbn13: 9781933718550.0
+               authors: Mike Mullin
+               original_publication_year: 2011.0
+               title: "Ashfall (Ashfall, #1)"
+               average_rating: 3.96
+               ratings_count: 18583
+               image_url: https://images.gr-assets.com/books/1301592315m/9644151.jpg
+            -
+               isbn13: 9780340884360.0
+               authors: Robert Muchamore
+               original_publication_year: 2005.0
+               title: "Maximum Security (Cherub, #3)"
+               average_rating: 4.24
+               ratings_count: 14860
+               image_url: https://images.gr-assets.com/books/1357225650m/1303564.jpg
+            -
+               isbn13: 9780373210060.0
+               authors: Maria V. Snyder
+               original_publication_year: 2010.0
+               title: "Inside Out (Insider, #1)"
+               average_rating: 3.82
+               ratings_count: 20472
+               image_url: https://images.gr-assets.com/books/1335383824m/7059135.jpg
+            -
+               isbn13: 
+               authors: Elizabeth Eulberg
+               original_publication_year: 2014.0
+               title: Better off Friends
+               average_rating: 3.95
+               ratings_count: 15692
+               image_url: https://images.gr-assets.com/books/1386372561m/17228280.jpg
+            -
+               isbn13: 9780375955720.0
+               authors: Jeanne DuPrau
+               original_publication_year: 2008.0
+               title: "The Diamond of Darkhold (Book of Ember, #4)"
+               average_rating: 3.79
+               ratings_count: 18425
+               image_url: https://images.gr-assets.com/books/1320636372m/2493973.jpg
+            -
+               isbn13: 9780758266930.0
+               authors: Jennifer Estep
+               original_publication_year: 2011.0
+               title: "Touch of Frost (Mythos Academy, #1)"
+               average_rating: 3.96
+               ratings_count: 23343
+               image_url: https://images.gr-assets.com/books/1301505419m/9439989.jpg
+            -
+               isbn13: 9781423111440.0
+               authors: Laurie Faria Stolarz
+               original_publication_year: 2008.0
+               title: "Deadly Little Secret (Touch, #1)"
+               average_rating: 3.86
+               ratings_count: 20156
+               image_url: https://images.gr-assets.com/books/1325558484m/2820533.jpg
+            -
+               isbn13: 9780439829110.0
+               authors: John Marsden
+               original_publication_year: 1994.0
+               title: "The Dead of Night (Tomorrow, #2)"
+               average_rating: 4.13
+               ratings_count: 15240
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780312599060.0
+               authors: Sherrilyn Kenyon
+               original_publication_year: 2011.0
+               title: "Invincible (Chronicles of Nick, #2)"
+               average_rating: 4.27
+               ratings_count: 19887
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316194690.0
+               authors: A.S. King
+               original_publication_year: 2012.0
+               title: Ask the Passengers
+               average_rating: 3.88
+               ratings_count: 17896
+               image_url: https://images.gr-assets.com/books/1371850438m/13069935.jpg
+            -
+               isbn13: 9780439632510.0
+               authors: Margaret Peterson Haddix
+               original_publication_year: 1995.0
+               title: Running Out of Time
+               average_rating: 3.98
+               ratings_count: 19126
+               image_url: https://images.gr-assets.com/books/1408913584m/227658.jpg
+            -
+               isbn13: 9780763665660.0
+               authors: Leslye Walton
+               original_publication_year: 2014.0
+               title: The Strange and Beautiful Sorrows of Ava Lavender
+               average_rating: 4.12
+               ratings_count: 18562
+               image_url: https://images.gr-assets.com/books/1397110326m/18166936.jpg
+            -
+               isbn13: 9781599901190.0
+               authors: Gemma Malley
+               original_publication_year: 2007.0
+               title: "The Declaration (The Declaration, #1)"
+               average_rating: 3.71
+               ratings_count: 16224
+               image_url: https://images.gr-assets.com/books/1317067021m/1722717.jpg
+            -
+               isbn13: 9781416928060.0
+               authors: Obert Skye
+               original_publication_year: 2005.0
+               title: "Leven Thumps and the Gateway to Foo (Leven Thumps, #1)"
+               average_rating: 3.71
+               ratings_count: 17760
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780786816580.0
+               authors: Avi
+               original_publication_year: 2002.0
+               title: "The Cross of Lead (Crispin, #1)"
+               average_rating: 3.59
+               ratings_count: 18277
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780340893620.0
+               authors: Catherine Fisher
+               original_publication_year: 2000.0
+               title: "Sapphique (Incarceron, #2)"
+               average_rating: 3.7
+               ratings_count: 16475
+               image_url: https://images.gr-assets.com/books/1327885488m/4499214.jpg
+            -
+               isbn13: 9780553567150.0
+               authors: Lurlene McDaniel
+               original_publication_year: 1995.0
+               title: "Don't Die, My Love"
+               average_rating: 4.12
+               ratings_count: 14197
+               image_url: https://images.gr-assets.com/books/1320416427m/127451.jpg
+            -
+               isbn13: 9781250061780.0
+               authors: Sandy   Hall
+               original_publication_year: 2014.0
+               title: A Little Something Different
+               average_rating: 3.65
+               ratings_count: 14206
+               image_url: https://images.gr-assets.com/books/1396394307m/20801166.jpg
+            -
+               isbn13: 9780062124360.0
+               authors: Lauren Oliver
+               original_publication_year: 2011.0
+               title: "Hana (Delirium, #1.5)"
+               average_rating: 3.63
+               ratings_count: 20107
+               image_url: https://images.gr-assets.com/books/1324106918m/12663646.jpg
+            -
+               isbn13: 9780425198920.0
+               authors: David Colbert
+               original_publication_year: 2001.0
+               title: "The Magical Worlds of Harry Potter: A Treasury of Myths, Legends, and Fascinating Facts"
+               average_rating: 3.96
+               ratings_count: 13820
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781599901670.0
+               authors: Shannon Hale
+               original_publication_year: 2009.0
+               title: "Forest Born (The Books of Bayern, #4)"
+               average_rating: 4.01
+               ratings_count: 20603
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781416918740.0
+               authors: Kate Brian
+               original_publication_year: 2006.0
+               title: "Private (Private, #1)"
+               average_rating: 3.81
+               ratings_count: 16556
+               image_url: https://images.gr-assets.com/books/1331126301m/381489.jpg
+            -
+               isbn13: 9780061240880.0
+               authors: Derek Landy
+               original_publication_year: 2008.0
+               title: "Playing with Fire (Skulduggery Pleasant, #2)"
+               average_rating: 4.31
+               ratings_count: 15533
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316156300.0
+               authors: Darren Shan
+               original_publication_year: 2002.0
+               title: "Sons of Destiny (Cirque Du Freak, #12)"
+               average_rating: 4.22
+               ratings_count: 14997
+               image_url: https://images.gr-assets.com/books/1344270002m/8948.jpg
+            -
+               isbn13: 9780312569040.0
+               authors: Emmy Laybourne
+               original_publication_year: 2012.0
+               title: "Monument 14 (Monument 14, #1)"
+               average_rating: 3.89
+               ratings_count: 17360
+               image_url: https://images.gr-assets.com/books/1337779838m/12753231.jpg
+            -
+               isbn13: 9781442454150.0
+               authors: Richard Paul Evans
+               original_publication_year: 2012.0
+               title: "Rise of the Elgen (Michael Vey, #2)"
+               average_rating: 4.29
+               ratings_count: 15152
+               image_url: https://images.gr-assets.com/books/1332381957m/12988089.jpg
+            -
+               isbn13: 9780316101880.0
+               authors: "James Patterson, Chris Tebbetts, Laura Park"
+               original_publication_year: 2011.0
+               title: "Middle School: The Worst Years of My Life (Midde School, #1)"
+               average_rating: 4.01
+               ratings_count: 14178
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780698410430.0
+               authors: Alwyn Hamilton
+               original_publication_year: 2016.0
+               title: "Rebel of the Sands (Rebel of the Sands, #1)"
+               average_rating: 3.96
+               ratings_count: 16789
+               image_url: https://images.gr-assets.com/books/1446829335m/24934065.jpg
+            -
+               isbn13: 9781402798440.0
+               authors: Colleen Houck
+               original_publication_year: 2012.0
+               title: "Tiger's Destiny (The Tiger Saga, #4)"
+               average_rating: 4.41
+               ratings_count: 18503
+               image_url: https://images.gr-assets.com/books/1340738756m/12677913.jpg
+            -
+               isbn13: 9781905294960.0
+               authors: Cornelia Funke
+               original_publication_year: 1990.0
+               title: "The Inkheart Trilogy: Inkheart, Inkspell, Inkdeath (Inkworld, #1-3)"
+               average_rating: 4.17
+               ratings_count: 14014
+               image_url: https://images.gr-assets.com/books/1346484626m/3334563.jpg
+            -
+               isbn13: 9780399256160.0
+               authors: Lynda Mullaly Hunt
+               original_publication_year: 2012.0
+               title: One for the Murphys
+               average_rating: 4.31
+               ratings_count: 16058
+               image_url: https://images.gr-assets.com/books/1320344047m/12926804.jpg
+            -
+               isbn13: 9780062128030.0
+               authors: Megan Shepherd
+               original_publication_year: 2013.0
+               title: "The Madman’s Daughter (The Madman’s Daughter, #1)"
+               average_rating: 3.69
+               ratings_count: 17647
+               image_url: https://images.gr-assets.com/books/1354155885m/12291438.jpg
+            -
+               isbn13: 9780803739090.0
+               authors: Huntley Fitzpatrick
+               original_publication_year: 2014.0
+               title: What I Thought Was True
+               average_rating: 3.71
+               ratings_count: 16390
+               image_url: https://images.gr-assets.com/books/1479774148m/15832932.jpg
+            -
+               isbn13: 9780062081860.0
+               authors: Sara Shepard
+               original_publication_year: 2011.0
+               title: "Ruthless (Pretty Little Liars, #10)"
+               average_rating: 3.93
+               ratings_count: 16885
+               image_url: https://images.gr-assets.com/books/1314802629m/10429037.jpg
+            -
+               isbn13: 9780439846650.0
+               authors: Jenny Nimmo
+               original_publication_year: 2007.0
+               title: "Charlie Bone and the Beast (The Children of the Red King, #6)"
+               average_rating: 3.93
+               ratings_count: 16397
+               image_url: https://images.gr-assets.com/books/1290344896m/47878.jpg
+            -
+               isbn13: 9780061767610.0
+               authors: Lauren Conrad
+               original_publication_year: 2010.0
+               title: "Sweet Little Lies (L.A. Candy, #2)"
+               average_rating: 3.53
+               ratings_count: 14901
+               image_url: https://images.gr-assets.com/books/1258145375m/6609864.jpg
+            -
+               isbn13: 9780399256190.0
+               authors: John Flanagan
+               original_publication_year: 2011.0
+               title: "The Lost Stories (Ranger's Apprentice, #11)"
+               average_rating: 4.27
+               ratings_count: 15816
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781921794090.0
+               authors: Hannah Harrington
+               original_publication_year: 2011.0
+               title: Saving June
+               average_rating: 3.97
+               ratings_count: 14867
+               image_url: https://images.gr-assets.com/books/1349156138m/10947600.jpg
+            -
+               isbn13: 9781250003330.0
+               authors: Anna Banks
+               original_publication_year: 2013.0
+               title: "Of Triton (The Syrena Legacy, #2)"
+               average_rating: 4.0
+               ratings_count: 19216
+               image_url: https://images.gr-assets.com/books/1355733528m/15513156.jpg
+            -
+               isbn13: 9780374379930.0
+               authors: Jack Gantos
+               original_publication_year: 2011.0
+               title: Dead End in Norvelt
+               average_rating: 3.72
+               ratings_count: 15877
+               image_url: https://images.gr-assets.com/books/1371074276m/9858488.jpg
+            -
+               isbn13: 9780060540750.0
+               authors: Jerry Spinelli
+               original_publication_year: 2002.0
+               title: Loser
+               average_rating: 3.72
+               ratings_count: 15079
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780375814240.0
+               authors: Roald Dahl
+               original_publication_year: 1977.0
+               title: The Wonderful Story of Henry Sugar and Six More
+               average_rating: 4.15
+               ratings_count: 13419
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316014560.0
+               authors: Sara Zarr
+               original_publication_year: 2008.0
+               title: Sweethearts
+               average_rating: 3.64
+               ratings_count: 16515
+               image_url: https://images.gr-assets.com/books/1336053590m/2020935.jpg
+            -
+               isbn13: 9780373210570.0
+               authors: Julie Kagawa
+               original_publication_year: 2012.0
+               title: "The Lost Prince (The Iron Fey: Call of the Forgotten, #1)"
+               average_rating: 4.05
+               ratings_count: 21049
+               image_url: https://images.gr-assets.com/books/1335463790m/12614410.jpg
+            -
+               isbn13: 9780060724500.0
+               authors: Meg Cabot
+               original_publication_year: 2005.0
+               title: "Ready or Not (All-American Girl, #2)"
+               average_rating: 3.4
+               ratings_count: 21089
+               image_url: https://images.gr-assets.com/books/1327951939m/19452.jpg
+            -
+               isbn13: 9780689839110.0
+               authors: Margaret Peterson Haddix
+               original_publication_year: 2003.0
+               title: "Among the Barons (Shadow Children, #4)"
+               average_rating: 4.08
+               ratings_count: 17495
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780060837650.0
+               authors: Meg Cabot
+               original_publication_year: 2007.0
+               title: Jinx
+               average_rating: 3.72
+               ratings_count: 21745
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780439636480.0
+               authors: Michael Morpurgo
+               original_publication_year: 2003.0
+               title: Private Peaceful
+               average_rating: 4.16
+               ratings_count: 13123
+               image_url: https://images.gr-assets.com/books/1328868065m/1048645.jpg
+            -
+               isbn13: 9780330425780.0
+               authors: Cath Crowley
+               original_publication_year: 2010.0
+               title: Graffiti Moon
+               average_rating: 3.9
+               ratings_count: 14176
+               image_url: https://images.gr-assets.com/books/1320129868m/7863274.jpg
+            -
+               isbn13: 9780061779850.0
+               authors: Kimberly Derting
+               original_publication_year: 2011.0
+               title: "Desires of the Dead (The Body Finder, #2)"
+               average_rating: 4.07
+               ratings_count: 20654
+               image_url: https://images.gr-assets.com/books/1288223505m/7827221.jpg
+            -
+               isbn13: 9781423176370.0
+               authors: Cristin Terrill
+               original_publication_year: 2013.0
+               title: All Our Yesterdays
+               average_rating: 4.05
+               ratings_count: 16338
+               image_url: https://images.gr-assets.com/books/1370046261m/13514612.jpg
+            -
+               isbn13: 9780525425880.0
+               authors: Nina LaCour
+               original_publication_year: 2014.0
+               title: Everything Leads to You
+               average_rating: 3.89
+               ratings_count: 17583
+               image_url: https://images.gr-assets.com/books/1389744233m/18667779.jpg
+            -
+               isbn13: 9780316058290.0
+               authors: Wendy Mass
+               original_publication_year: 2006.0
+               title: Jeremy Fink and the Meaning of Life
+               average_rating: 4.02
+               ratings_count: 15567
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780007302150.0
+               authors: Derek Landy
+               original_publication_year: 2008.0
+               title: "The Faceless Ones (Skulduggery Pleasant, #3)"
+               average_rating: 4.4
+               ratings_count: 14971
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780142409860.0
+               authors: Cate Tiernan
+               original_publication_year: 2001.0
+               title: "Book of Shadows (Sweep, #1)"
+               average_rating: 4.04
+               ratings_count: 18691
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780545169170.0
+               authors: Siobhan Vivian
+               original_publication_year: 2012.0
+               title: The List
+               average_rating: 3.46
+               ratings_count: 16569
+               image_url: https://images.gr-assets.com/books/1439733432m/10866233.jpg
+            -
+               isbn13: 9780671729390.0
+               authors: V.C. Andrews
+               original_publication_year: 1986.0
+               title: "Dark Angel (Casteel, #2)"
+               average_rating: 3.96
+               ratings_count: 14720
+               image_url: https://images.gr-assets.com/books/1322289444m/397466.jpg
+            -
+               isbn13: 9780062020570.0
+               authors: Emily M. Danforth
+               original_publication_year: 2012.0
+               title: The Miseducation of Cameron Post
+               average_rating: 3.99
+               ratings_count: 16235
+               image_url: https://images.gr-assets.com/books/1309190566m/11595276.jpg
+            -
+               isbn13: 9780061477960.0
+               authors: Diana Wynne Jones
+               original_publication_year: 2008.0
+               title: "House of Many Ways (Howl's Moving Castle, #3)"
+               average_rating: 4.03
+               ratings_count: 17697
+               image_url: https://images.gr-assets.com/books/1293848674m/2173611.jpg
+            -
+               isbn13: 9780316030890.0
+               authors: Louisa May Alcott
+               original_publication_year: 1876.0
+               title: "Rose in Bloom (Eight Cousins, #2)"
+               average_rating: 4.03
+               ratings_count: 16842
+               image_url: https://images.gr-assets.com/books/1344269387m/17533.jpg
+            -
+               isbn13: 
+               authors: David  Arnold
+               original_publication_year: 2015.0
+               title: Mosquitoland
+               average_rating: 3.92
+               ratings_count: 14312
+               image_url: https://images.gr-assets.com/books/1402661616m/18718848.jpg
+            -
+               isbn13: 9780375836950.0
+               authors: Melina Marchetta
+               original_publication_year: 1992.0
+               title: Looking for Alibrandi
+               average_rating: 3.85
+               ratings_count: 14685
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780316084220.0
+               authors: Kody Keplinger
+               original_publication_year: 2012.0
+               title: A Midsummer's Nightmare
+               average_rating: 3.83
+               ratings_count: 17247
+               image_url: https://images.gr-assets.com/books/1327469139m/12813860.jpg
+            -
+               isbn13: 9780061701240.0
+               authors: Sarah Mlynowski
+               original_publication_year: 2011.0
+               title: Ten Things We Did (and Probably Shouldn't Have)
+               average_rating: 3.74
+               ratings_count: 15396
+               image_url: https://images.gr-assets.com/books/1293821561m/9266810.jpg
+            -
+               isbn13: 9781442430010.0
+               authors: Moira Young
+               original_publication_year: 2012.0
+               title: "Rebel Heart (Dust Lands, #2)"
+               average_rating: 3.89
+               ratings_count: 16265
+               image_url: https://images.gr-assets.com/books/1326311073m/13042154.jpg
+            -
+               isbn13: 9780525422430.0
+               authors: Heather Brewer
+               original_publication_year: 2010.0
+               title: "Eleventh Grade Burns (The Chronicles of Vladimir Tod, #4)"
+               average_rating: 4.31
+               ratings_count: 14758
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780142402450.0
+               authors: "Brian Jacques, Allan Curless"
+               original_publication_year: 1997.0
+               title: "The Long Patrol (Redwall, #10)"
+               average_rating: 4.1
+               ratings_count: 15343
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781599901110.0
+               authors: Jessica Day George
+               original_publication_year: 2008.0
+               title: "Dragon Flight (Dragon Slippers, #2)"
+               average_rating: 4.18
+               ratings_count: 15918
+               image_url: https://images.gr-assets.com/books/1441437868m/2208744.jpg
+            -
+               isbn13: 9780590396970.0
+               authors: Tamora Pierce
+               original_publication_year: 2003.0
+               title: "Shatterglass (The Circle Opens, #4)"
+               average_rating: 4.16
+               ratings_count: 18253
+               image_url: https://images.gr-assets.com/books/1366303866m/153782.jpg
+            -
+               isbn13: 9780689857960.0
+               authors: Margaret Peterson Haddix
+               original_publication_year: 2004.0
+               title: "Among the Brave (Shadow Children, #5)"
+               average_rating: 4.14
+               ratings_count: 16527
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062280700.0
+               authors: Danielle  Paige
+               original_publication_year: 2015.0
+               title: "The Wicked Will Rise (Dorothy Must Die, #2)"
+               average_rating: 3.82
+               ratings_count: 16739
+               image_url: https://images.gr-assets.com/books/1423841142m/18602341.jpg
+            -
+               isbn13: 9780316912130.0
+               authors: Cecily von Ziegesar
+               original_publication_year: 2003.0
+               title: "All I Want is Everything (Gossip Girl, #3)"
+               average_rating: 3.56
+               ratings_count: 15467
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781442402360.0
+               authors: Jonathan Maberry
+               original_publication_year: 2011.0
+               title: "Dust & Decay (Rot & Ruin, #2)"
+               average_rating: 4.29
+               ratings_count: 13646
+               image_url: https://images.gr-assets.com/books/1293823083m/9917998.jpg
+            -
+               isbn13: 
+               authors: Laura Ruby
+               original_publication_year: 2015.0
+               title: Bone Gap
+               average_rating: 3.86
+               ratings_count: 15150
+               image_url: https://images.gr-assets.com/books/1402928507m/18806240.jpg
+            -
+               isbn13: 9780060096180.0
+               authors: Meg Cabot
+               original_publication_year: 2004.0
+               title: Teen Idol
+               average_rating: 3.53
+               ratings_count: 20271
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9781250095250.0
+               authors: Stephanie Garber
+               original_publication_year: 2017.0
+               title: Caraval
+               average_rating: 3.97
+               ratings_count: 30975
+               image_url: https://images.gr-assets.com/books/1465563623m/27883214.jpg
+            -
+               isbn13: 9781934813320.0
+               authors: Cheryl Rainfield
+               original_publication_year: 2010.0
+               title: Scars
+               average_rating: 4.17
+               ratings_count: 12452
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780375814710.0
+               authors: Tamora Pierce
+               original_publication_year: 2011.0
+               title: "Mastiff (Beka Cooper, #3)"
+               average_rating: 4.24
+               ratings_count: 19695
+               image_url: https://images.gr-assets.com/books/1302921347m/2964700.jpg
+            -
+               isbn13: 9781416997960.0
+               authors: Brandon Mull
+               original_publication_year: 2013.0
+               title: "Chasing the Prophecy (Beyonders, #3)"
+               average_rating: 4.35
+               ratings_count: 11816
+               image_url: https://images.gr-assets.com/books/1356328161m/15801381.jpg
+            -
+               isbn13: 9780316701310.0
+               authors: Lisi Harrison
+               original_publication_year: 2004.0
+               title: "Best Friends for Never (The Clique, #2)"
+               average_rating: 3.73
+               ratings_count: 15345
+               image_url: https://images.gr-assets.com/books/1344263568m/95658.jpg
+            -
+               isbn13: 9781484715770.0
+               authors: Alexandra Bracken
+               original_publication_year: 2016.0
+               title: "Passenger (Passenger, #1)"
+               average_rating: 3.84
+               ratings_count: 23070
+               image_url: https://images.gr-assets.com/books/1446749751m/20983362.jpg
+            -
+               isbn13: 9781561371730.0
+               authors: Gloria Levine
+               original_publication_year: 
+               title: "Ralph S. Mouse by Beverly Cleary: Teacher Guide (Novel Units)"
+               average_rating: 3.95
+               ratings_count: 14513
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780062114620.0
+               authors: Jodi Lynn Anderson
+               original_publication_year: 2012.0
+               title: Tiger Lily
+               average_rating: 3.98
+               ratings_count: 16217
+               image_url: https://images.gr-assets.com/books/1329681513m/7514925.jpg
+            -
+               isbn13: 9780394895900.0
+               authors: Philip Pullman
+               original_publication_year: 1985.0
+               title: "The Ruby in the Smoke (Sally Lockhart, #1)"
+               average_rating: 3.75
+               ratings_count: 16214
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780802723470.0
+               authors: A.C. Gaughen
+               original_publication_year: 2012.0
+               title: "Scarlet (Scarlet, #1)"
+               average_rating: 3.95
+               ratings_count: 19665
+               image_url: https://images.gr-assets.com/books/1370147602m/11983940.jpg
+            -
+               isbn13: 9781402271880.0
+               authors: Miranda Kenneally
+               original_publication_year: 2012.0
+               title: Stealing Parker
+               average_rating: 3.88
+               ratings_count: 15997
+               image_url: https://images.gr-assets.com/books/1334451985m/12551077.jpg
+            -
+               isbn13: 9780374324920.0
+               authors: Alexander Gordon Smith
+               original_publication_year: 2009.0
+               title: "Lockdown (Escape from Furnace, #1)"
+               average_rating: 4.1
+               ratings_count: 14024
+               image_url: https://images.gr-assets.com/books/1409279086m/6420846.jpg
+            -
+               isbn13: 9780062285680.0
+               authors: Veronica Roth
+               original_publication_year: 2014.0
+               title: "The Traitor (Divergent, #0.4)"
+               average_rating: 4.19
+               ratings_count: 12299
+               image_url: https://images.gr-assets.com/books/1393687607m/18080923.jpg
+            -
+               isbn13: 9781421513430.0
+               authors: "Aya Nakahara, Pookie Rolf"
+               original_publication_year: 2001.0
+               title: "Love★Com, Vol. 1"
+               average_rating: 4.22
+               ratings_count: 13801
+               image_url: https://s.gr-assets.com/assets/nophoto/book/111x148-bcc042a9c91a29c1d680899eff700a03.png
+            -
+               isbn13: 9780399256450.0
+               authors: Kristin Levine
+               original_publication_year: 2012.0
+               title: The Lions of Little Rock
+               average_rating: 4.22
+               ratings_count: 12962
+               image_url: https://images.gr-assets.com/books/1442034711m/11699349.jpg
+            -
+               isbn13: 9781453860950.0
+               authors: Amanda Hocking
+               original_publication_year: 2010.0
+               title: "Hollowland (The Hollows, #1)"
+               average_rating: 3.97
+               ratings_count: 13847
+               image_url: https://images.gr-assets.com/books/1299468023m/8951449.jpg
+            -
+               isbn13: 9780061671360.0
+               authors: L.J. Smith
+               original_publication_year: 2009.0
+               title: "The Captive Part II / The Power (The Secret Circle, #2-3)"
+               average_rating: 4.11
+               ratings_count: 16231
+               image_url: https://images.gr-assets.com/books/1341592078m/3665811.jpg
+            -
+               isbn13: 
+               authors: Maki Minami
+               original_publication_year: 2003.0
+               title: "Special A, Vol. 1 (Special A, #1)"
+               average_rating: 4.18
+               ratings_count: 14607
+               image_url: https://images.gr-assets.com/books/1408207157m/2122216.jpg
+            -
+               isbn13: 9780395137190.0
+               authors: Elizabeth George Speare
+               original_publication_year: 1961.0
+               title: The Bronze Bow
+               average_rating: 3.93
+               ratings_count: 15507
+               image_url: https://images.gr-assets.com/books/1369712582m/24408.jpg
+            -
+               isbn13: 9780061985880.0
+               authors: Kiersten White
+               original_publication_year: 2012.0
+               title: "Endlessly (Paranormalcy, #3)"
+               average_rating: 3.99
+               ratings_count: 18789
+               image_url: https://images.gr-assets.com/books/1320349604m/9064899.jpg

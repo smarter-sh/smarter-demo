@@ -1,0 +1,96 @@
+---
+apiVersion: smarter.sh/v1
+kind: Plugin
+metadata:
+  name: xyz_fml_policies
+  pluginClass: static
+  description: Get additional documentation about the Family and Medical Leave Act FMLA policies for the fictional XYZ Corp.  These are taken from the SHRM (Society of Human Resource Managers) suggested FMLA policy.
+  version: 0.1.0
+  tags:
+    - FMLA
+    - Family and Medical Leave Act
+    - Family Leave
+    - Medical Leave
+spec:
+  selector:
+    directive: search_terms
+    # Complete search terms that will trigger the chatbot to use your customized system prompt.
+    searchTerms:
+      - FMLA
+      - Medical Leave
+      - Family Leave
+      - Family and Medical Leave
+      - Employee Benefits
+      - Military Leave
+  prompt:
+    systemRole: >
+      You are a helpful HR representative for [XYZ Corporation](https://xyzcorp.com). You are a chatbot that answers questions from employees and dependants of XYZ Corporation.
+    model: gpt-6-luna
+    temperature: 1.0
+    max_tokens: 4096
+  data:
+    description: Get additional information about FMLA benefits of XYZ Corporation. Information includes eligibility, XYZ Corporation complies with the Family and Medical Leave Act (FMLA) and will grant up to 12 weeks of leave during a 12-month period to eligible employees (or up to 26 weeks of military caregiver leave).  The purpose of this policy is to provide employees with a general description of their FMLA rights. In the event of any conflict between this policy and the applicable law, employees will be afforded all rights required by law. If you have any questions, concerns or disputes with this policy, please contact Mary Jones in HR at X5309.
+    staticData:
+      contact:
+        - name: Mary Jones
+        - title: HR Director
+        - location: Headquarters
+        - website: https://xyzcorp.com/hr/
+        - email: hr@xyzcorp.com
+      citation: >
+        https://www.smu.edu/admission/apply/transfer/applicationprocess
+      eligibility: >
+        To be eligible for leave under this policy, employees must meet all of the following requirements:
+        requirements:
+        - months: Must have worked at least twelve (12) months for XYZ Corporation.
+        - location: Currently work at a location where there are at least fifty (50) employees within seventy-five (75) miles.
+      consecutive: >
+        The 12 months of employment do not have to be consecutive. All periods of absence from work due to or necessitated by service in the uniformed services are counted as hours worked in determining eligibility.
+      reasons_for_leave: >
+        To qualify as FMLA leave under this policy, the leave must be for one of the following reasons: 
+        - childbirth: The birth of a child or placement of a child with the employee for adoption or foster care.
+        - spousal_care: To care for a spouse, child or parent who has a serious health condition.
+        - serious: For a serious health condition that makes the employee unable to perform the essential functions of his or her job.</li>
+        - militatory: For any qualifying exigency arising out of the fact that a spouse, child or parent is a military member on covered active duty or on call to covered active duty status.
+        - dependant_illness: To care for a covered service member with a serious injury or illness.
+      amount_of_leave: >
+        An eligible employee can take up to 12 weeks of FMLA leave during any 12-month period. The company will measure the 12-month period as a rolling 12-month period measured backward from the date an employee uses any leave under this policy. Each time an employee takes leave, the company will compute the amount of leave the employee has taken under this policy in the last 12 months and subtract it from the 12 weeks of available leave, and the balance remaining is the amount the employee is entitled to take at that time.  An eligible employee can take up to 26 weeks for the FMLA military caregiver leave during a single 12-month period. For this military caregiver leave, the company will measure the 12-month period as a rolling 12-month period measured forward. FMLA leave already taken for other FMLA circumstances will be deducted from the total of 26 weeks available. 
+        Eligible spouses who both work for the company may only take a combined total of 12 weeks of leave for the birth of a child, adoption or placement of a child in foster care, or to care for a parent (but not a parents-in-law) with a serious health condition. Both may only take a combined total of 26 weeks of leave to care for a covered injured or ill service member (if each spouse is a parent, spouse, child or next of kin of the service member).
+      intermittent_leave_or_reduced_work_schedule: >
+        Employees may take FMLA leave in one consecutive block of time, may use the leave intermittently (take a day periodically when needed over the year) or, under certain circumstances, may use the leave to reduce the workweek or workday, resulting in a reduced hour schedule. In all cases, the leave may not exceed a total of 12 workweeks (or 26 workweeks to care for an injured or ill service member) in a 12-month period.  The company may temporarily transfer an employee to an available alternative position with equivalent pay and benefits if the alternative position would better accommodate the intermittent or reduced schedule, in instances when leave for the employee or employee's family member is foreseeable and for planned medical treatment, including recovery from a serious health condition or to care for a child after birth or placement for adoption or foster care.  For the birth, adoption or foster care of a child, the company and the employee must mutually agree to the schedule before the employee may take the leave intermittently or work a reduced-hour schedule. Leave for birth, adoption or foster care of a child must be taken within one year of the birth or placement of the child.  When leave is needed for planned medical treatment, the employee must make a reasonable effort to schedule treatment so as not to unduly disrupt the company's operations.
+      employee_notice_requirement: >
+        All employees requesting FMLA leave must provide verbal or written notice of the need for leave to the department manager or HR manager.  When the need for the leave is foreseeable, the employee must provide the company with at least 30 days' notice. When an employee becomes aware of a need for FMLA leave fewer than 30 days in advance, the employee must provide notice of the need for the leave either the same day the need for leave is discovered or the next business day. When the need for FMLA leave is not foreseeable, the employee must comply with the company's usual and customary notice and procedural requirements for requesting leave, absent unusual circumstances.  Within five business days after the employee has provided this notice, the HR manager will complete and provide the employee with a Notice of Eligibility and Rights and request a medical certification or other supporting documentation as necessary. 
+      designation_of_fmla_leave: >
+        5 or less days after the employee has submitted the required certification or other documentation, the HR manager will complete and provide the employee with a written response to the employee's request for FMLA leave using the FMLA Designation Notice.
+      employee_status_and_benefits_during_leave: >
+        XYZ Corporation will continue an employee's health benefits during the leave period at the same level and under the same conditions as if the employee was continuously at work.  While on paid leave, the employer will continue to make payroll deductions to collect the employee's share of insurance premiums. While on unpaid leave, the employee must continue to make this payment, either in person or by mail. The payment must be received in the accounting department by the 5th day of each month. If the payment is more than 30 days late, the employee's health care coverage may be dropped for the duration of the leave. The company will provide 15 days' notification prior to the employee's loss of coverage.  If the employee chooses not to return to work for reasons other than a continued serious health condition of the employee or the employee's family member or a circumstance beyond the employee's control, the company will require the employee to reimburse the company the amount it paid for the employee's health insurance premium during the leave period.  If the employee contributes to a life insurance or disability plan, the company will continue making payroll deductions while the employee is on paid leave. While the employee is on unpaid leave, the employee may request continuation of such benefits and pay his or her portion of the premiums, or the company may elect to maintain such benefits during the leave and pay the employee's share of the premium payments. If the employee does not continue these payments, the company will discontinue coverage during the leave. If the company maintains coverage, the company may recover the costs incurred for paying the employee's share of any premiums, whether or not the employee returns to work.
+      employee_status_after_leave:
+        An employee who takes leave under this policy may be asked to provide a fitness for duty clearance from a health care provider. This requirement will be included in the company's response to the FMLA request. Generally, an employee who takes FMLA leave will be able to return to the same position or a position with equivalent status, pay, benefits and other employment terms. The position will be the same or one that is virtually identical in terms of pay, benefits and working conditions. The company may choose to exempt certain key employees from this requirement and not return them to the same or similar position when doing so will cause substantial and grievous economic injury to business operations. Key employees will be given written notice at the time FMLA leave is requested of his or her status as a key employee.
+      use_of_paid_and_unpaid_leave:
+        An employee who is taking FMLA leave because of the employee's own serious health condition or the serious health condition of a family member must use all paid vacation, personal or sick leave prior to being eligible for unpaid leave. Sick leave may run concurrently with FMLA leave if the reason for the FMLA leave is covered by the established sick leave policy. 
+      types_of_leave:
+        - name: Disability
+          description: Disability leave for the birth of a child and for an employee's serious health condition, including workers' compensation leave (to the extent that it qualifies), will be designated as FMLA leave and will run concurrently with FMLA. For example, when an employee takes six weeks of XYZ Corporation pregnancy disability leave, the six weeks will be designated as FMLA leave and counted toward the employee's 12-week entitlement. The employee will then be required to substitute accrued (or earned) paid leave as appropriate before being eligible for unpaid leave for what remains of the 12-week entitlement. An employee who is taking leave for the adoption or foster care of a child must use all paid vacation, personal or family leave prior to being eligible for unpaid leave. 
+        - name: Military
+          description: An employee who is using military FMLA leave for a qualifying exigency must use all paid vacation and personal leave prior to being eligible for unpaid leave. An employee using FMLA military caregiver leave must also use all paid vacation, personal leave or sick leave (as long as the reason for the absence is covered by the company's sick leave policy) prior to being eligible for unpaid leave.
+      intent_to_return_to_work_from_fmla_leave:
+        On a basis that does not discriminate against employees on FMLA leave, the company may require an employee on FMLA leave to report periodically on the employee's status and intent to return to work.
+      definitions:
+        - name: Serious Health Condition
+          description: A Serious Heath Condition means an illness, injury, impairment, or physical or mental condition that involves inpatient care or continuing treatment by a health care provider. This can include conditions with short-term, chronic, long-term or permanent periods of incapacity.
+        - name: Spouse
+          description: A Spouse means a husband or wife as defined or recognized in the state where the individual was married and includes individuals in a common law or same-sex marriage. Spouse also includes a husband or wife in a marriage that was validly entered into outside of the United States, if the marriage could have been entered into in at least one state.
+        - name: Child
+          description: A Child means a biological, adopted or foster child, a stepchild, a legal ward, or a child of a person standing in loco parentis, who is either under age 18, or age 18 or older and &#34;incapable of self-care because of a mental or physical disability&#34; at the time that FMLA leave is to commence.
+        - name: Parent
+          description: A Parent means a biological, adoptive, step or foster father or mother, or any other individual who stood in loco parentis to the employee when the employee was a child. This term does not include parents-in-law.
+        - name: Qualifying Exigency
+          description: A Qualifying Exigency includes short-notice deployment, military events and activities, child care and school activities, financial and legal arrangements, counseling, rest and recuperation, post-deployment activities, and additional activities that arise out of active duty, provided that the employer and employee agree, including agreement on timing and duration of the leave.
+        - name: Covered Active Duty
+          description: Covered Active Duty for members of a regular component of the Armed Forces, means duty during deployment of the member with the Armed Forces to a foreign country. For a member of the Reserve components of the Armed Forces, means duty during the deployment of the member with the Armed Forces to a foreign country under a federal call or order to active duty in support of a contingency operation, in accordance with 29 CR 825.102.
+        - name: Next of Kin
+          description: The Next of Kin of a covered service member is the nearest blood relative, other than the covered service member's spouse, parent or child in the following order of priority. Blood relatives who have been granted legal custody of the service member by court decree or statutory provisions, brothers and sisters, grandparents, aunts and uncles, and first cousins, unless the covered service member has specifically designated in writing another blood relative as his or her nearest blood relative for purposes of military caregiver leave under the FMLA. 
+        - name: Covered Service Member
+          description: A Covered Service Member is a current member of the Armed Forces, including a member of the National Guard or Reserves, who is receiving medical treatment, recuperation or therapy, or is in outpatient status or on the temporary disability retired list for a serious injury or illness.
+        - name: Serious Injury or Illness
+          description: A Series Injury or Illness is one that is incurred by a service member in the line of duty on active duty that may cause the service member to be medically unfit to perform the duties of his or her office, grade, rank or rating. A serious injury or illness also includes injuries or illnesses that existed before the service member's active duty and that were aggravated by service in the line of duty on active duty.
