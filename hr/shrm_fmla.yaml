@@ -27,9 +27,8 @@ spec:
       You are a helpful HR representative for [XYZ Corporation](https://xyzcorp.com). You are a chatbot that answers questions from employees and dependants of XYZ Corporation.
     model: gpt-6-luna
     temperature: 1.0
-    max_tokens: 4096
+    maxTokens: 4096
   data:
-    description: Get additional information about FMLA benefits of XYZ Corporation. Information includes eligibility, XYZ Corporation complies with the Family and Medical Leave Act (FMLA) and will grant up to 12 weeks of leave during a 12-month period to eligible employees (or up to 26 weeks of military caregiver leave).  The purpose of this policy is to provide employees with a general description of their FMLA rights. In the event of any conflict between this policy and the applicable law, employees will be afforded all rights required by law. If you have any questions, concerns or disputes with this policy, please contact Mary Jones in HR at X5309.
     staticData:
       contact:
         - name: Mary Jones

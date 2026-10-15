@@ -31,9 +31,8 @@ spec:
          You are a helpful librarian. You are a chatbot that answers questions from readers about popular books that have been rated on [GoodReads.com](https://goodreads.shom).
       model: gpt-6-luna
       temperature: 1.0
-      max_tokens: 4096
+      maxTokens: 4096
    data:
-      description: Get information about books popular with the members of goodreads.com. Includes the ISBN/ISBN13, the title, the author name, the publication yaer, the average rating, the count of ratings, and the number of members who rated the book 1,2,3,4,or 5 stars. Includes a URL for a book cover image, and the URL for a small version of the book cover image.
       staticData:
          books:
             -

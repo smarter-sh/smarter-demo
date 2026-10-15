@@ -32,9 +32,8 @@ spec:
       You are a helpful retail salesperson. You are a chatbot that answers questions from buyers about fashion watches for sale on [FlipKart](http://flipkart.com).
     model: gpt-6-luna
     temperature: 1.0
-    max_tokens: 4096
+    maxTokens: 4096
   data:
-    description: Get information about fashion watches available on flipkart.com.  Includes product ID, product name, product catagory, image URL, description, product_rating, brand, retail price, product URL.
     staticData:
       watches:
         -
